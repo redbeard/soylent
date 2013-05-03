@@ -12,7 +12,7 @@
             .nav-collapse.collapse.navbar-responsive-collapse
               %ul.nav
                 %li.active
-                  %a{:href => "#/home"} Home
+                  %a{:href => "#/"} Recipe
                 %li
                   %a{:href => "#/products"} Products
               %form.navbar-search.pull-right
@@ -27,5 +27,5 @@
           %tbody
             %tr.ingredient
               %th(ng-repeat= 'column in recipeTreeTableModel.columns()' ng-class="{first: $first, odd: $index % 2 == 0, even: $index % 2 == 1 }" class= '{{column.template}} {{column.name.toSymbol()}}')
-                {{column.name}}      
-            %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'")
+                %span.header {{column.title}}      
+            %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'" ng-controller='IngredientsTreeModelNodeController')

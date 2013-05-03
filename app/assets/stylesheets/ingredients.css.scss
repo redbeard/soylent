@@ -18,15 +18,21 @@
   tr.recipe { 
     border-bottom: 1px solid black;
 
-    input.quantity {
+    .quantity > * {
+      display: none;
+    }
+
+    .operations > * {
       display: none;
     }
   }
 
   th.element-column-cell {
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg); /* Safari and Chrome */
+    transform:rotate(80deg);
+    -ms-transform:rotate(80deg); /* IE 9 */
+    -webkit-transform:rotate(80deg); /* Safari and Chrome */
+
+    text-align: right;
   }
 
   td.even { 

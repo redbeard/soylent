@@ -1,1 +1,4 @@
-{{row.ingredient.name}}
+%a(href='{{row.ingredient.best_price().url}}' rel="nofollow" title='{{row.ingredient.best_price().name}}' target="_blank" description='' ng-show='row.ingredient.best_price()')
+  {{row.ingredient.name}}
+%span(ng-show='!row.ingredient.best_price()')
+  {{row.ingredient.name}}

@@ -82,6 +82,9 @@ class window.Ingredient
   contents: ()->
     @serving_contents
 
+  remove: (ingredient)->
+    @serving_contents = @serving_contents.filter (i) -> (i != ingredient)
+
   in_quantity: (desired_quantity)->
     throw "Incompatible quantities, ingredient's: #{@quantity}, given: #{desired_quantity}" unless @quantity.isCompatible(desired_quantity)
     scale = desired_quantity.div(@quantity)
@@ -131,6 +134,8 @@ class window.ProductInQuantity
     @quantity = desired_quantity
 
   scale: () -> @quantity.div(@product.quantity)
+
+  best_price: ()-> @product.best_price()
 
   toString: ()->
     "#{@quantity.toString()} (#{scale()}x) serving of #{@product.name}"

@@ -1,6 +1,6 @@
 window.HomeCtrl = ($scope, $http, $routeParams) ->
   $scope.fpo = new Product "Fine Powdered Oats (1kg)", new Qty("1kg"), 
-    [ new ProductSource("BulkNutrients", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("9 AUD")) ], 
+    [ new ProductSource("BulkNutrients.com.au", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("9 AUD")) ], 
     new Qty("100g"), [ 
       new IngredientElement("Energy", new Qty("1608 kJ")), 
       new IngredientElement("Protein", new Qty("12.1g")), 
