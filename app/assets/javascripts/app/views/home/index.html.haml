@@ -1,4 +1,4 @@
-.container-fluid
+#home.container-fluid
   .row-fluid
     .span12
       .navbar
@@ -15,7 +15,17 @@
                   %a{:href => "#/home"} Home
                 %li
                   %a{:href => "#/products"} Products
+              %form.navbar-search.pull-right
+                %div.currency
+                  %select.currency(ng-model="recipeTreeTableModel.preferred_units['Price']")
+                    %option.usd(label='USD' value="USD")
+                    %option.aud(label='AUD' value="AUD")
   .row-fluid
     .span12
-      .well
-        here
+      .ingredients
+        %table
+          %tbody
+            %tr.ingredient
+              %th(ng-repeat= 'column in recipeTreeTableModel.columns()' ng-class="{first: $first, odd: $index % 2 == 0, even: $index % 2 == 1 }" class= '{{column.template}} {{column.name.toSymbol()}}')
+                {{column.name}}      
+            %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'")

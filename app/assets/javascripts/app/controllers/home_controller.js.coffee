@@ -46,4 +46,35 @@ window.HomeCtrl = ($scope, $http, $routeParams) ->
       $scope.wpi_aap.in_quantity(new Qty("100g"))
     ]
 
+  $scope.recipe = new Recipe [ $scope.fpo.in_quantity(new Qty("200g")), $scope.wpi.in_quantity(new Qty("200g")) ]
+  $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recipe, {
+    'Energy': 'kilocalorie', 
+    'Price': 'AUD',
+    'Protein': 'g', 
+    'Carbohydrates': 'g', 
+    'Carbohydrates (sugars)': 'g', 
+    'Fats': 'g', 
+    'Fats (saturated)': 'g', 
+    'Fibre': 'g', 
+    'Sodium': 'mg', 
+    'Isoleucine': 'g', 
+    'Leucine': 'g', 
+    'Lysine': 'g', 
+    'Methionine': 'g', 
+    'Phenylalanine': 'g', 
+    'Threonine': 'g', 
+    'Tryptophan': 'g', 
+    'Valine': 'g', 
+    'Histidine': 'g', 
+    'Alanine': 'g', 
+    'Arginine': 'g', 
+    'Aspartic acid': 'g', 
+    'Cysteine': 'g', 
+    'Glutamic acid': 'g', 
+    'Glycine': 'g', 
+    'Proline': 'g', 
+    'Serine': 'g', 
+    'Tyrosine': 'g', 
+  })
+
   this
