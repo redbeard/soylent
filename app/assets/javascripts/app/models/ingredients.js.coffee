@@ -100,6 +100,10 @@ class window.Recipe extends Ingredient
   constructor: (serving_contents)->
     super "Recipe", new Qty("1 day"), serving_contents
 
+class window.Recommendation extends Ingredient
+  constructor: (serving_contents)->
+    super "Recommended", new Qty("1 day"), serving_contents
+
 class window.Product extends Ingredient
   constructor: (name, quantity_in_package, sources, serving_quantity, serving_contents)->
     super(name, serving_quantity, serving_contents)

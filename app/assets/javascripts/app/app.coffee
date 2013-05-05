@@ -13,6 +13,10 @@ angular.module('Soylent', [ ]).
       
     };
   ).
+  factory('products_repository', ()->
+    new ProductsRepositoryService()
+  )
+  .
   config [ '$routeProvider', '$httpProvider', ($routeProvider, $httpProvider) ->
       $routeProvider.
         when('/',                             { templateUrl: 'assets/app/views/home/index.html',         controller: HomeCtrl }).

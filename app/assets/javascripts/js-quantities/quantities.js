@@ -210,6 +210,9 @@
     "<byte>"  :[["B","byte"], 1.0, "memory", ["<byte>"]],
     "<bit>"  :[["b","bit"], 0.125, "memory", ["<byte>"]],
 
+    /* vitamin IU */
+    "<iu>"  :[["IU", "iu", "International Units"], 1.0, "vitamins", ["<each>"]],
+
     /* currency */
     "<dollar>":[["USD","dollar"], 1.0, "currency", ["<dollar>"]],
     "<cents>" :[["cents"], 0.01, "currency", ["<dollar>"]],

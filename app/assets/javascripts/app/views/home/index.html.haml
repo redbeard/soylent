@@ -17,7 +17,7 @@
                   %a{:href => "#/products"} Products
               %form.navbar-search.pull-right
                 %div.currency
-                  %select.currency(ng-model="recipeTreeTableModel.preferred_units['Price']")
+                  %select.currency(ng-model="recipeTreeTableModel.column_order_and_preferences['Price'].preferred_unit")
                     %option.usd(label='USD' value="USD")
                     %option.aud(label='AUD' value="AUD")
   .row-fluid
@@ -26,6 +26,13 @@
         %table
           %tbody
             %tr.ingredient
-              %th(ng-repeat= 'column in recipeTreeTableModel.columns()' ng-class="{first: $first, odd: $index % 2 == 0, even: $index % 2 == 1 }" class= '{{column.template}} {{column.name.toSymbol()}}')
+              %th(ng-repeat= 'column in recipeTreeTableModel.columns()' ng-class="{first: $first, odd: $index % 2 == 0, even: $index % 2 == 1 }" class= '{{column.template}} {{column.name.toSymbol()}} {{column.preferences.column_class}}' ng-show='recipeTreeTableModel.show[column.preferences.column_class]')
                 %span.header {{column.title}}      
-            %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'" ng-controller='IngredientsTreeModelNodeController')
+            %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.row_class}} {{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'" ng-controller='IngredientsTreeModelNodeController')
+      .well
+        .pref
+          %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
+            Show minor elements
+        .pref
+          %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
+            Show breakdown

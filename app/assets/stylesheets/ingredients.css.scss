@@ -7,6 +7,8 @@
 
 .ingredients {
 
+  margin: 5px;
+
   input.quantity { 
     width: 5em;
   }
@@ -15,8 +17,7 @@
     padding: 0.5em;
   }
 
-  tr.recipe { 
-    border-bottom: 1px solid black;
+  tr.no-quantity {
 
     .quantity > * {
       display: none;
@@ -25,6 +26,12 @@
     .operations > * {
       display: none;
     }
+
+  }
+
+  tr.recipe { 
+    border-bottom: 1px solid black;
+
   }
 
   th.element-column-cell {
@@ -43,30 +50,16 @@
     height: 8em;
   }
 
-  .isoleucine, 
-  .leucine, 
-  .lysine, 
-  .methionine, 
-  .phenylalanine, 
-  .threonine, 
-  .tryptophan, 
-  .valine, 
-  .histidine, 
-  .alanine, 
-  .arginine, 
-  .aspartic-acid, 
-  .cysteine, 
-  .glutamic-acid, 
-  .glycine, 
-  .proline, 
-  .serine, 
-  .tyrosine, { 
+  .breakdown, { 
     font-size: 65%;
   }
 
-  .fats-saturated,
-  .carbohydrates-sugars, { 
+  .minor { 
     font-size: 75%;
+  }
+
+  .major { 
+    font-size: 85%;
   }
 
 }
