@@ -29,7 +29,7 @@ class window.IngredientsTreeTableModel
 
     @root_ingredient = new Ingredient("Root", new Qty("1 day"), [ @recommendation, @recipe ])
 
-    @show = { major: true, minor: true, breakdown: false }
+    @show = { major: true, minor: true, breakdown: false, ops: true, name: true, quantity: true }
 
   rows: ()->
     [ @recommendation_node, @recipe_node ].concat( @recipe_node.children() )
