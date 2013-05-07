@@ -6,6 +6,7 @@ gem 'rails', '4.0.0.beta1'
 gem 'sqlite3'
 gem 'angularjs-rails'
 
+gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Gems used only for assets and not required

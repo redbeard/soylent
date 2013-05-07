@@ -13,6 +13,7 @@
 //= require_tree ./monkeypatch
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
 //= require bootstrap
 //= require turbolinks
@@ -23,3 +24,5 @@
 //= require ./app/app.coffee
 //= require_tree ./app/models
 //= require_tree ./app/controllers
+//= require_tree ./app/services
+

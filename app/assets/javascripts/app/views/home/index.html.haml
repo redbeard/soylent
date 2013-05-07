@@ -29,6 +29,13 @@
               %th(ng-repeat= 'column in recipeTreeTableModel.columns()' ng-class="{first: $first, odd: $index % 2 == 0, even: $index % 2 == 1 }" class= '{{column.template}} {{column.name.toSymbol()}} {{column.preferences.column_class}}' ng-show='recipeTreeTableModel.show[column.preferences.column_class]')
                 %span.header {{column.title}}      
             %tr.items(ng-repeat = 'row in recipeTreeTableModel.rows()' class='{{row.row_class}} {{row.ingredient.__proto__.constructor.name.toSymbol()}}' ng-include="'assets/app/views/ingredients/tree-table-model.html'" ng-controller='IngredientsTreeModelNodeController')
+            %tr.add
+              %td &nbsp;
+              %td(colspan='{{recipeTreeTableModel.columns().length - 1}}')
+                %input(auto-complete ui-items="product_autocomplete" ng-model="selected")
+                %a(id='{{row.ingredient.name}}' ng-click='addNew(selected)')
+                  %span.icon-plus
+
       .well
         .pref
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
