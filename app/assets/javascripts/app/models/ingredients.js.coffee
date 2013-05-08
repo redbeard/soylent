@@ -105,18 +105,17 @@ class window.Recommendation extends Ingredient
     super "Recommended", new Qty("1 day"), serving_contents
 
 class window.Product extends Ingredient
-  constructor: (name, quantity_in_package, sources, serving_quantity, serving_contents)->
+  constructor: (name, sources, serving_quantity, serving_contents)->
     super(name, serving_quantity, serving_contents)
-    @quantity_in_package = quantity_in_package
     @sources = sources
-    @serving_contents = [ @best_price().as_ingredient().mul( serving_quantity.div(quantity_in_package) ) ].concat(@serving_contents)
+    @serving_contents = [ @best_price().as_ingredient().mul( serving_quantity ) ].concat(@serving_contents)
 
   in_scale: (scale)->
     new ProductInQuantity(@product, "#{scale}")
 
   best_price: ()->
     @sources.reduce ((a, i)-> 
-      if a== null
+      if a == null
         i
       else if a.price <= i.price
         a
@@ -128,7 +127,7 @@ class window.Product extends Ingredient
     new ProductInQuantity(this, desired_quantity)
 
   toString: ()->
-    "#{@name}: Package has: #{@quantity_in_package}. Serving #{@quantity} contains:\n\t#{ @serving_contents.map( (i)-> i.toString() ).join("\n\t") }\n\tAvailable from:\n\t\t#{ @sources.map( (i)-> i.toString() ).join("\n\t\t") }"
+    "#{@name}: Serving #{@quantity} contains:\n\t#{ @serving_contents.map( (i)-> i.toString() ).join("\n\t") }\n\tAvailable from:\n\t\t#{ @sources.map( (i)-> i.toString() ).join("\n\t\t") }"
 
 class window.ProductInQuantity
   constructor: (product, desired_quantity)->
@@ -154,16 +153,17 @@ class window.ProductInQuantity
     new ProductInQuantity(@product, desired_quantity)
 
 class window.ProductSource
-  constructor: (name, url, price)->
+  constructor: (name, url, quantity_in_package, price)->
     @name = name
     @url = url
+    @quantity_in_package = quantity_in_package
     @price = price
 
   as_ingredient: ()->
     new IngredientElement("Price", @price)
 
   toString: ()->
-    "#{@name} #{@url} for #{@price.toString()} per package"
+    "#{@name} #{@url} for #{@price.toString()} per #{@quantity_in_package.toString()} package"
 
   in_scale: (scale)->
     new ProductSource(@name, @url, @price * scale)

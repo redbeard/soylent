@@ -6,7 +6,7 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     new IngredientElement("Sodium", new Qty("2.4 g")), 
     new IngredientElement("Potassium", new Qty("4.5 g")), 
     new IngredientElement("Chloride", new Qty("3.4 g")), 
-    new IngredientElement("Fiber", new Qty("40 g")), 
+    new IngredientElement("Fibre", new Qty("40 g")), 
     new IngredientElement("Calcium", new Qty("1 g")), 
     new IngredientElement("Iron", new Qty("9 mg")), 
     new IngredientElement("Phosphorous ", new Qty("1g")), 
@@ -30,7 +30,7 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     new IngredientElement("Niacin", new Qty("20 mg")), 
     new IngredientElement("Folate", new Qty("400 microgram")), 
     new IngredientElement("Biotin", new Qty("300 microgram")), 
-    new IngredientElement("Panthothenic acid", new Qty("10 mg")), 
+    new IngredientElement("Pantothenic acid", new Qty("10 mg")), 
     new IngredientElement("Choline", new Qty("550mg")), 
     new IngredientElement("Sulfur", new Qty("2g")),
     new IngredientElement("Lithium", new Qty("0g")),
@@ -67,154 +67,54 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     $scope.recipeTreeTableModel.refresh()
 
   $scope.recipe = new Recipe [ 
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("100g")), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("100g")) ]
+    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("46ml") ),
+    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("280g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("250g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("80g") ),
+    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),
+    $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
+    $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
+    $products_repository.findBySubstring("Pantothenic acid")[0].in_quantity( new Qty("10 mg") ),
+    $products_repository.findBySubstring("Potassium")[0].in_quantity( new Qty("12.5 g") ),
+    $products_repository.findBySubstring("Sea Salt")[0].in_quantity( new Qty("3.34 g") ),
+  ]
 
   $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
-    "Price": {
-      "preferred_unit": "AUD",
-      "column_class": "major"
-    },
-    "Energy": {
-      "preferred_unit": "kilocalorie",
-      "column_class": "major"
-    },
-    "Protein": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Carbohydrates": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Fats": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Fibre": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Sodium": {
-      "preferred_unit": "mg",
-      "column_class": "major"
-    },
-    "Potassium": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Fiber": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Calcium": {
-      "preferred_unit": "g",
-      "column_class": "major"
-    },
-    "Chloride": {
-      "preferred_unit": "g",
-      "column_class": "minor"
-    },
-    "Iron": {
-      "preferred_unit": "g",
-      "column_class": "minor"
-    },
-    "Phosphorous ": {
-      "preferred_unit": "g",
-      "column_class": "minor"
-    },
-    "Iodine": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Magnesium": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Zinc": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Selenium": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Copper": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Manganese": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Chromium": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Molybdenum": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Vitamin A": {
-      "preferred_unit": "IU",
-      "column_class": "minor"
-    },
-    "Vitamin B6": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Vitamin B12": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Vitamin C": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Vitamin D": {
-      "preferred_unit": "IU",
-      "column_class": "minor"
-    },
-    "Vitamin E": {
-      "preferred_unit": "IU",
-      "column_class": "minor"
-    },
-    "Vitamin K": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Thiamin": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Riboflavin": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Niacin": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Folate": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Biotin": {
-      "preferred_unit": "microgram",
-      "column_class": "minor"
-    },
-    "Panthothenic acid": {
-      "preferred_unit": "mg",
-      "column_class": "minor"
-    },
-    "Choline": {
-      "preferred_unit": "g",
-      "column_class": "minor"
-    },
-    "Sulfur": {
-      "preferred_unit": "g",
-      "column_class": "minor"
-    },
+    "Price": { "preferred_unit": "AUD", "column_class": "major" }, 
+    "Energy": { "preferred_unit": "kilocalorie", "column_class": "major" }, 
+    "Protein": { "preferred_unit": "g", "column_class": "major" }, 
+    "Carbohydrates": { "preferred_unit": "g", "column_class": "major" }, 
+    "Fats": { "preferred_unit": "g", "column_class": "major" }, 
+    "Fibre": { "preferred_unit": "g", "column_class": "major" }, 
+    "Sodium": { "preferred_unit": "mg", "column_class": "major" }, 
+    "Potassium": { "preferred_unit": "g", "column_class": "major" }, 
+    "Calcium": { "preferred_unit": "g", "column_class": "major" }, 
+    "Chloride": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Iron": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Phosphorous ": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Iodine": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Magnesium": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Zinc": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Selenium": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Copper": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Manganese": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Chromium": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Molybdenum": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Vitamin A": { "preferred_unit": "IU", "column_class": "minor" }, 
+    "Vitamin B6": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Vitamin B12": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Vitamin C": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Vitamin D": { "preferred_unit": "IU", "column_class": "minor" }, 
+    "Vitamin E": { "preferred_unit": "IU", "column_class": "minor" }, 
+    "Vitamin K": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Thiamin": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Riboflavin": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Niacin": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Folate": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Biotin": { "preferred_unit": "microgram", "column_class": "minor" }, 
+    "Pantothenic acid": { "preferred_unit": "mg", "column_class": "minor" }, 
+    "Choline": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Sulfur": { "preferred_unit": "g", "column_class": "minor" }, 
     "Lithium": { "preferred_unit": "g", "column_class": "minor" }, 
     "Creatine": { "preferred_unit": "g", "column_class": "minor" }, 
     "Lycopene": { "preferred_unit": "microgram", "column_class": "minor" }, 
@@ -224,86 +124,26 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     "Lutein": { "preferred_unit": "microgram", "column_class": "minor" }, 
     "Alpha Carotene": { "preferred_unit": "microgram", "column_class": "minor" }, 
     "Vanadium": { "preferred_unit": "microgram", "column_class": "minor" },     
-    "Carbohydrates (sugars)": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Fats (saturated)": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Isoleucine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Leucine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Lysine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Methionine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Phenylalanine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Threonine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Tryptophan": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Valine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Histidine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Alanine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Arginine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Aspartic acid": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Cysteine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Glutamic acid": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Glycine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Proline": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Serine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
-    "Tyrosine": {
-      "preferred_unit": "g",
-      "column_class": "breakdown"
-    },
+    "Carbohydrates (sugars)": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Fats (saturated)": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Isoleucine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Leucine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Lysine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Methionine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Phenylalanine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Threonine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Tryptophan": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Valine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Histidine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Alanine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Arginine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Aspartic acid": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Cysteine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Glutamic acid": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Glycine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Proline": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Serine": { "preferred_unit": "g", "column_class": "breakdown" }, 
+    "Tyrosine": { "preferred_unit": "g", "column_class": "breakdown" }, 
   } )
 
   this
