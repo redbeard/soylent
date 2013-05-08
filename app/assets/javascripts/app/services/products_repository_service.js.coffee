@@ -131,6 +131,14 @@ class window.ProductsRepositoryService
         new IngredientElement("Iodine", new Qty("67.5 microgram")),
       ]
 
+    @products.push new Product "Copper Gluconate Anhydrous 1%", 
+      [ 
+        new ProductSource("PureBulk.com (1kg package)", "http://purebulk.com/copper-gluconate-anhydrous-1.html", new Qty("1kg"), new Qty("32.50 USD/kg")),
+      ], 
+      new Qty("160mg"), [ 
+        new IngredientElement("Copper", new Qty("1.6mg")),
+      ]
+
     @products.push new Product "Potassium Citrate", 
       [ 
         new ProductSource("PureBulk.com (250g package)", "http://purebulk.com/potassium-citrate-powder.html", new Qty("250g"), new Qty("40 USD/kg")),

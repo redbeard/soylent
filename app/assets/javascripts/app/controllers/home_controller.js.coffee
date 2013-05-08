@@ -77,6 +77,7 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     $products_repository.findBySubstring("Pantothenic acid")[0].in_quantity( new Qty("10 mg") ),
     $products_repository.findBySubstring("Potassium")[0].in_quantity( new Qty("12.5 g") ),
     $products_repository.findBySubstring("Sea Salt")[0].in_quantity( new Qty("3.34 g") ),
+    $products_repository.findBySubstring("Copper Gluconate")[0].in_quantity( new Qty("200 mg") ),
   ]
 
   $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
@@ -90,7 +91,7 @@ window.HomeCtrl = ($scope, $http, $products_repository) ->
     "Potassium": { "preferred_unit": "g", "column_class": "major" }, 
     "Calcium": { "preferred_unit": "g", "column_class": "major" }, 
     "Chloride": { "preferred_unit": "g", "column_class": "minor" }, 
-    "Iron": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Iron": { "preferred_unit": "mg", "column_class": "minor" }, 
     "Phosphorous ": { "preferred_unit": "g", "column_class": "minor" }, 
     "Iodine": { "preferred_unit": "microgram", "column_class": "minor" }, 
     "Magnesium": { "preferred_unit": "mg", "column_class": "minor" }, 
