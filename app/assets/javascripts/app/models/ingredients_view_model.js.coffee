@@ -12,6 +12,9 @@ class window.IngredientsTreeTableNode
   delete_child: (child_node)->
     console.log "Will delete", child_node.ingredient, "from", @ingredient
     @ingredient.remove(child_node.ingredient)
+    @refresh()
+
+  refresh: ()->
     @_children = null
     @model._columns = null
 
@@ -30,6 +33,9 @@ class window.IngredientsTreeTableModel
     @root_ingredient = new Ingredient("Root", new Qty("1 day"), [ @recommendation, @recipe ])
 
     @show = { major: true, minor: true, breakdown: false, ops: true, name: true, quantity: true }
+
+  refresh: ()->
+    @recipe_node.refresh()
 
   rows: ()->
     [ @recommendation_node, @recipe_node ].concat( @recipe_node.children() )

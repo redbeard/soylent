@@ -1,4 +1,4 @@
-#home.container-fluid
+#recipe.container-fluid
   .row-fluid
     .span12
       .navbar
@@ -16,7 +16,7 @@
                 %li
                   %a{:href => "#/products"} Products
               %form.navbar-search.pull-right
-                %div.currency
+                %div.currency(ng-show="recipeTreeTableModel")
                   %select.currency(ng-model="recipeTreeTableModel.column_order_and_preferences['Price'].preferred_unit")
                     %option.usd(label='USD' value="USD")
                     %option.aud(label='AUD' value="AUD")
@@ -32,9 +32,10 @@
             %tr.add
               %td &nbsp;
               %td(colspan='{{recipeTreeTableModel.columns().length - 1}}')
-                %input(auto-complete ui-items="product_autocomplete" ng-model="selected")
-                %a(id='{{row.ingredient.name}}' ng-click='addNew(selected)')
-                  %span.icon-plus
+                %form(id='add-product' ng-submit='add_product(product_to_add()); selected_product_to_add = null; ')
+                  %input(auto-complete ui-items="product_autocomplete" ng-model="selected_product_to_add")
+                  %button.btn.btn-mini(type='submit' id='add-product-button' ng-disabled='!product_ready_to_add()')
+                    %span.icon-plus
 
       .well
         .pref
@@ -43,3 +44,9 @@
         .pref
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
             Show breakdown
+  .row-fluid
+    .footer.span12
+      .copyright
+      &copy; 2013 Tal Rotbart; All rights reserved. 
+      .disclaimer
+        USE AT YOUR OWN RISK! NO WARRANTY OR GUARANTEES! THIS WEBSITE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS WEBSITE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
