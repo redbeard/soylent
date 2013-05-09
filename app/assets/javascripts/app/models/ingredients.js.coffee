@@ -10,21 +10,34 @@ class window.IngredientElement
     throw "Incompatible quantities, element's: #{@quantity}, given: #{desired_quantity}" unless @quantity.isCompatible(desired_quantity)
     new IngredientElement(@name, desired_quantity)
 
-  in_scale: (scale)->
-    new IngredientElement(@name, @quantity.mul(scale))
+  mul: (scale)->
+    scaled_quantity = @quantity.mul(scale)
+    scaled_quantity = scaled_quantity.to(@quantity.units()) if scaled_quantity.isCompatible(@quantity)
+    new IngredientElement @name, scaled_quantity
 
-  totals: ()->
-    totals = new IngredientElements()
-    totals[@name] = this
-    totals
+  in_scale: IngredientElement.prototype.mul
+
+  div: (scale)->
+    scaled_quantity = @quantity.div(scale)
+    scaled_quantity = scaled_quantity.to(@quantity.units()) if scaled_quantity.isCompatible(@quantity)
+    new IngredientElement @name, scaled_quantity
 
   add: (ingredient_element)->
     return this if (ingredient_element == null) or (ingredient_element == undefined)
     throw "Incompatible element to add. This is (#{@toString()}). Tried adding: (#{ingredient_element.toString()})" unless (ingredient_element.name == @name and ingredient_element.quantity.isCompatible(@quantity))
     new IngredientElement(@name, @quantity.add(ingredient_element.quantity))
 
-  mul: (scale)->
-    @in_scale(scale)
+  sub: (ingredient_element)->
+    return this if (ingredient_element == null) or (ingredient_element == undefined)
+    throw "Incompatible element to subtract. This is (#{@toString()}). Tried subtracting: (#{ingredient_element.toString()})" unless (ingredient_element.name == @name and ingredient_element.quantity.isCompatible(@quantity))
+    new IngredientElement(@name, @quantity.sub(ingredient_element.quantity))
+
+  totals: ()->
+    return @_totals if @_totals 
+
+    @_totals = new IngredientElements()
+    @_totals[@name] = this
+    @_totals
 
   toString: ()->
     "#{@name}:\t#{@quantity.toString()}"
@@ -44,12 +57,43 @@ class window.IngredientElements
       else 
         _sum[k] = v if (v.totals)
 
-    _sum 
+    _sum
+
+  sub: (ingredient_elements)-> 
+    rhs = ingredient_elements.totals()
+
+    _sum = new IngredientElements()
+    for k,v of this
+      _sum[k] = v if (v.totals)
+    for k,v of rhs
+      if (_sum[k] and _sum[k].totals)
+        _sum[k] = _sum[k].sub(v)
+      else 
+        _sum[k] = v.mul(new Qty("-1.0")) if (v.totals)
+
+    _sum
 
   mul: (scale)->
     r = new IngredientElements()
     for k,v of this
       r[k] = v.mul(scale) if (v.mul)
+    r
+
+  div: (scale)->
+    r = new IngredientElements()
+    for k,v of this
+      r[k] = v.div(scale) if (v.div)
+    r
+
+  filter_by: (other)->
+    r = new IngredientElements()
+    for k,rhs_v of other
+      lhs_v = this[k]
+      if (rhs_v.totals)
+        if lhs_v and (lhs_v.totals)
+          r[k] = lhs_v 
+        else
+          r[k] = rhs_v.mul(new Qty("0.0"))
     r
 
   totals: ()->

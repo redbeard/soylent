@@ -32,6 +32,18 @@
   tr.recipe { 
     border-bottom: 1px solid black;
 
+    td.bad {
+      color: rgb(192, 0, 0);
+      font-weight: bolder;
+    }
+
+    td.good {
+    }
+
+    td.warning {
+      color: rgb(192, 0, 0);
+    }
+
   }
 
   th.element-column-cell {
@@ -44,6 +56,34 @@
 
   td.even { 
     background: #f9f9f9;
+
+    &.bad {
+      background: #ffe9e9;
+    }
+
+    &.good {
+      background: #e9ffe9;
+    }
+
+    &.warning {
+      background: #ffffe9;
+    }
+  }
+
+  td.odd {
+
+    &.bad {
+      background: #fff9f9;
+    }
+
+    &.good {
+      background: #f9fff9;
+    }
+
+    &.warning {
+      background: #fffff0;
+    }
+  
   }
 
   th {
@@ -51,6 +91,10 @@
   }
 
   .breakdown, { 
+    font-size: 65%;
+  }
+
+  .unknown, { 
     font-size: 65%;
   }
 

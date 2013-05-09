@@ -42,6 +42,9 @@
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
             Show minor elements
         .pref
+          %input(type='checkbox' ng-model='recipeTreeTableModel.show["unknown"]')
+            Show elements without recommendation
+        .pref
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
             Show breakdown
   .row-fluid
