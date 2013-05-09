@@ -76,10 +76,10 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     $scope.timeoutPromise = $timeout ( ()-> $scope.recipeTreeTableModel.refresh() ), 500
 
   $scope.recipe = new Recipe [ 
-    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("46ml") ),
-    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("280g") ),
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("250g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("80g") ),
+    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("30ml") ),
+    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("392.5g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("60g") ),
 #    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),
     $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
     $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
