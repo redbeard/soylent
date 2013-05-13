@@ -11,10 +11,11 @@ class window.IngredientsTreeTableNode
 
   delete_child: (child_node)->
     @ingredient.remove(child_node.ingredient)
+    @_children = @_children.filter (ch)-> ch != child_node
     @refresh()
 
   refresh: ()->
-    @_children = null
+#    @_children = null
     @model._columns = null
     @_cached_totals = null
 
@@ -69,7 +70,6 @@ class window.IngredientsTreeTableModel
           else unless (recommended_for_element.quantity.scalar == 0.0)
             percent_difference_for_element = difference_for_element.quantity.div(recommended_for_element.quantity) 
 
-        percent_difference_for_element = percent_difference_for_element.mul(-1.0) if percent_difference_for_element.lt(new Qty("0.0"))
         percent_difference[element_name] = new IngredientElement(element_name, percent_difference_for_element.to("percent"))
 
     @_percent_difference = percent_difference
@@ -81,9 +81,12 @@ class window.IngredientsTreeTableModel
     percent_difference_for = @percent_difference_for(column)
 
     return "none" unless percent_difference_for
-    return "good" if (percent_difference_for.quantity.scalar <= 5.0)
-    return "warning" if (percent_difference_for.quantity.scalar <= 15.0)
-    return "bad"
+    need_less_or_more = "need_more" if percent_difference_for.quantity.scalar < 0
+    need_less_or_more = "need_less" if percent_difference_for.quantity.scalar > 0
+
+    return "#{need_less_or_more} good" if (Math.abs(percent_difference_for.quantity.scalar) <= 5.0)
+    return "#{need_less_or_more} warning" if (Math.abs(percent_difference_for.quantity.scalar) <= 15.0)
+    return "#{need_less_or_more} bad"
 
   columns: ()->
     return @_columns if @_columns

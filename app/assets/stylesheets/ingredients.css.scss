@@ -58,7 +58,11 @@
     background: #f9f9f9;
 
     &.bad {
-      background: #ffe9e9;
+      background: #ffffe9;
+
+      &.need_more {
+        background: #ffe9e9;
+      }
     }
 
     &.good {
@@ -73,7 +77,11 @@
   td.odd {
 
     &.bad {
-      background: #fff9f9;
+      background: #fffff0;
+
+      &.need_more {
+        background: #fff9f9;
+      }
     }
 
     &.good {
