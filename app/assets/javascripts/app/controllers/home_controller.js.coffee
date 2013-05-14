@@ -2,9 +2,10 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
   $scope.products_repository = $products_repository
 
   $scope.recommendation = new Recommendation [
-    new IngredientElement("Carbohydrates", new Qty("409 g")), 
-    new IngredientElement("Protein", new Qty("102 g")), 
-    new IngredientElement("Fats", new Qty("65 g")), 
+    new IngredientElement("Energy", new Qty("1817 kcal")), 
+    new IngredientElement("Carbohydrates", new Qty("90.2 g")), 
+    new IngredientElement("Protein", new Qty("274 g")), 
+    new IngredientElement("Fats", new Qty("40.1 g")), 
     new IngredientElement("Sodium", new Qty("2.4 g")), 
     new IngredientElement("Potassium", new Qty("4.5 g")), 
     new IngredientElement("Chloride", new Qty("3.4 g")), 
@@ -76,10 +77,10 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     $scope.timeoutPromise = $timeout ( ()-> $scope.recipeTreeTableModel.refresh() ), 500
 
   $scope.recipe = new Recipe [ 
-    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("30ml") ),
-    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("392.5g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("60g") ),
+    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("25ml") ),
+#    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("151.0g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("280g") ),
 #    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),
     $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
     $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
@@ -92,10 +93,10 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
 
   $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
     "Price": { "preferred_unit": "AUD", "column_class": "major" }, 
-    "Energy": { "preferred_unit": "kilocalorie", "column_class": "major" }, 
-    "Protein": { "preferred_unit": "g", "column_class": "major" }, 
-    "Carbohydrates": { "preferred_unit": "g", "column_class": "major" }, 
-    "Fats": { "preferred_unit": "g", "column_class": "major" }, 
+    "Energy": { "preferred_unit": "kilocalorie", "column_class": "macro" }, 
+    "Protein": { "preferred_unit": "g", "column_class": "macro" }, 
+    "Carbohydrates": { "preferred_unit": "g", "column_class": "macro" }, 
+    "Fats": { "preferred_unit": "g", "column_class": "macro" }, 
     "Fibre": { "preferred_unit": "g", "column_class": "major" }, 
     "Sodium": { "preferred_unit": "mg", "column_class": "major" }, 
     "Potassium": { "preferred_unit": "g", "column_class": "major" }, 

@@ -123,6 +123,12 @@ class window.Ingredient
   contents_in_scale: (scale)->
     @contents().map (content)-> content.in_scale(scale)
 
+  ingredient_by_name: (name)->
+    found = @serving_contents.filter((i)-> (i.name == name))
+    throw "Couldn't find ingredient with name '#{name}'." if found.length <= 0
+    throw "More than one ingredient with name '#{name}'." if found.length > 1
+    found[0]
+
   contents: ()->
     @serving_contents
 

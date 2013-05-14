@@ -39,6 +39,12 @@
 
       .well
         .pref
+          %input(type='checkbox' ng-model='recipeTreeTableModel.show["macro"]')
+            Show macronutrients
+        .pref
+          %input(type='checkbox' ng-model='recipeTreeTableModel.show["major"]')
+            Show major elements
+        .pref
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
             Show minor elements
         .pref

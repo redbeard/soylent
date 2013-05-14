@@ -30,7 +30,7 @@
       padding: 0.5em;
       min-width: 5em;
 
-      &.major {
+      &.major, &.macro {
         min-width: 6em;
       }
 
@@ -74,7 +74,7 @@
         font-size: 75%;
       }
 
-      &.major { 
+      &.major, &.macro { 
         font-size: 85%;
       }
 
@@ -107,6 +107,9 @@
         color: rgb(192, 0, 0);
       }
 
+      span.no-value:after {
+        content: 'N/A'
+      }
     }
 
     td.even { 

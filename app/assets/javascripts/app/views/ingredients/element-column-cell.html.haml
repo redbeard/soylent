@@ -1,1 +1,2 @@
-{{row.total_for(column.name).quantity.toString(column.preferences.preferred_unit, 2)}}
+<span class='has-value' ng-show='row.total_for(column.name)'>{{row.total_for(column.name).quantity.toString(column.preferences.preferred_unit, 2)}}</span>
+<span class='no-value' ng-show='!row.total_for(column.name)'>&nbsp;</span>

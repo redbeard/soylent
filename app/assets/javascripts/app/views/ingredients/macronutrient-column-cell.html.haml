@@ -1,0 +1,2 @@
+%form(ng-submit='recipeTreeTableModel.refresh()' )
+  %input(class='quantity' ng-change='refreshAfterTimeout()' ng-model='recipeTreeTableModel.recommendation.ingredient_by_name(column.name).quantity' size='20' type='text' quantity)

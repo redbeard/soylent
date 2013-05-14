@@ -14,11 +14,6 @@ class window.IngredientsTreeTableNode
     @_children = @_children.filter (ch)-> ch != child_node
     @refresh()
 
-  refresh: ()->
-    #@_children = null
-    #@model._columns = null
-    @_cached_totals = null
-
   total_for: (element_name)->
     @cached_totals()[element_name]
 
@@ -26,7 +21,13 @@ class window.IngredientsTreeTableNode
     column.template
 
   cached_totals: ()->
-    @_cached_totals ||= @ingredient.totals()
+    cache_view_model_value(@model, this, "_cached_totals", () -> @ingredient.totals())
+
+window.cache_view_model_value = (root_model, self, cache_key, value_func)->
+    cached = self[cache_key]
+    if (!cached or cached.revision < root_model.revision)
+      self[cache_key] = cached = { revision: root_model.revision, value: value_func.apply(self) }
+    cached.value
 
 class window.IngredientsTreeTableModel
   constructor: (recommendation, recipe, column_order_and_preferences)->
@@ -37,42 +38,43 @@ class window.IngredientsTreeTableModel
     @recommendation_node = new IngredientsTreeTableNode(this, null, @recommendation, 'no-quantity')
     @recipe_node = new IngredientsTreeTableNode(this, null, @recipe, 'no-quantity')
 
-    @root_ingredient = new Ingredient("Root", new Qty("1 day"), [ @recommendation, @recipe ])
+    @show = { macro: true, major: true, minor: true, breakdown: false, ops: true, name: true, quantity: true, unknown: true }
 
-    @show = { major: true, minor: true, breakdown: false, ops: true, name: true, quantity: true, unknown: true }
+    @revision = 0
 
   refresh: ()->
-    @recipe_node.refresh()
-    @_percent_difference = null
+    @revision = @revision + 1
 
   template_for: (row, column)->
+    if (row == @recommendation_node) && (column.preferences.column_class == 'macro')
+      return "macronutrient-column-cell"
     column.template
 
   rows: ()->
     [ @recommendation_node, @recipe_node ].concat( @recipe_node.children() )
 
   percent_difference: ()->
-    return @_percent_difference if @_percent_difference
+    cache_view_model_value(this, this, "_percent_difference", ()->
+      recommended_totals = @recommendation_node.cached_totals()
+      recipe_totals = @recipe_node.cached_totals().filter_by(recommended_totals)
 
-    recommended_totals = @recommendation_node.cached_totals()
-    recipe_totals = @recipe_node.cached_totals().filter_by(recommended_totals)
+      difference = recipe_totals.sub(recommended_totals)
+      percent_difference = new IngredientElements()
+      for element_name, difference_for_element of difference
+        if (difference_for_element.quantity) 
+          recommended_for_element = recommended_totals[element_name]
 
-    difference = recipe_totals.sub(recommended_totals)
-    percent_difference = new IngredientElements()
-    for element_name, difference_for_element of difference
-      if (difference_for_element.quantity) 
-        recommended_for_element = recommended_totals[element_name]
+          percent_difference_for_element = new Qty("1.0")
+          if (difference_for_element.quantity)
+            if (difference_for_element.quantity.scalar == 0.0)
+              percent_difference_for_element = new Qty("0.0")
+            else unless (recommended_for_element.quantity.scalar == 0.0)
+              percent_difference_for_element = difference_for_element.quantity.div(recommended_for_element.quantity) 
 
-        percent_difference_for_element = new Qty("1.0")
-        if (difference_for_element.quantity)
-          if (difference_for_element.quantity.scalar == 0.0)
-            percent_difference_for_element = new Qty("0.0")
-          else unless (recommended_for_element.quantity.scalar == 0.0)
-            percent_difference_for_element = difference_for_element.quantity.div(recommended_for_element.quantity) 
+          percent_difference[element_name] = new IngredientElement(element_name, percent_difference_for_element.to("percent"))
 
-        percent_difference[element_name] = new IngredientElement(element_name, percent_difference_for_element.to("percent"))
-
-    @_percent_difference = percent_difference
+      percent_difference
+    )
 
   percent_difference_for: (column)->
     percent_difference_for = @percent_difference()[column.name]
