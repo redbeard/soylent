@@ -15,8 +15,8 @@ class window.IngredientsTreeTableNode
     @refresh()
 
   refresh: ()->
-#    @_children = null
-    @model._columns = null
+    #@_children = null
+    #@model._columns = null
     @_cached_totals = null
 
   total_for: (element_name)->

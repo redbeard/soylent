@@ -8,110 +8,147 @@
 .ingredients {
 
   margin: 5px;
+  padding: 0px;
+
+  form {
+    padding: 0px;
+    margin: 0px;
+
+    input {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
 
   input.quantity { 
     width: 5em;
   }
 
-  td {
-    padding: 0.5em;
-  }
+  table {
 
-  tr.no-quantity {
+    td {
+      padding: 0.5em;
+      min-width: 5em;
 
-    .quantity > * {
-      display: none;
-    }
+      &.major {
+        min-width: 6em;
+      }
 
-    .operations > * {
-      display: none;
-    }
+      &.name {
+        min-width: 20em;
+      }
 
-  }
+      &.breakdown, { 
+        font-size: 65%;
+      }
 
-  tr.recipe { 
-    border-bottom: 1px solid black;
+      &.unknown, { 
+        font-size: 65%;
+      }
 
-    td.bad {
-      color: rgb(192, 0, 0);
-      font-weight: bolder;
-    }
-
-    td.good {
-    }
-
-    td.warning {
-      color: rgb(192, 0, 0);
-    }
-
-  }
-
-  th.element-column-cell {
-    transform:rotate(80deg);
-    -ms-transform:rotate(80deg); /* IE 9 */
-    -webkit-transform:rotate(80deg); /* Safari and Chrome */
-
-    text-align: right;
-  }
-
-  td.even { 
-    background: #f9f9f9;
-
-    &.bad {
-      background: #ffffe9;
-
-      &.need_more {
-        background: #ffe9e9;
+      &.minor { 
+        font-size: 75%;
       }
     }
 
-    &.good {
-      background: #e9ffe9;
+    th {
+      height: 8em;
+
+      &.element-column-cell {
+        transform:rotate(80deg);
+        -ms-transform:rotate(80deg); /* IE 9 */
+        -webkit-transform:rotate(80deg); /* Safari and Chrome */
+      
+        text-align: right;
+      }
+
+      &.breakdown, { 
+        font-size: 65%;
+      }
+
+      &.unknown, { 
+        font-size: 65%;
+      }
+
+      &.minor { 
+        font-size: 75%;
+      }
+
+      &.major { 
+        font-size: 85%;
+      }
+
     }
 
-    &.warning {
-      background: #ffffe9;
+    tr.no-quantity {
+
+      .quantity > * {
+        display: none;
+      }
+
+      .operations > * {
+        display: none;
+      }
+
     }
-  }
 
-  td.odd {
+    tr.recipe { 
+      border-bottom: 1px solid black;
 
-    &.bad {
-      background: #fffff0;
+      td.bad {
+        color: rgb(192, 0, 0);
+        font-weight: bolder;
+      }
 
-      &.need_more {
-        background: #fff9f9;
+      td.good {
+      }
+
+      td.warning {
+        color: rgb(192, 0, 0);
+      }
+
+    }
+
+    td.even { 
+      background: #f9f9f9;
+
+      &.bad {
+        background: #ffffe9;
+
+        &.need_more {
+          background: #ffe9e9;
+        }
+      }
+
+      &.good {
+        background: #e9ffe9;
+      }
+
+      &.warning {
+        background: #ffffe9;
       }
     }
 
-    &.good {
-      background: #f9fff9;
+    td.odd {
+
+      &.bad {
+        background: #fffff0;
+
+        &.need_more {
+          background: #fff9f9;
+        }
+      }
+
+      &.good {
+        background: #f9fff9;
+      }
+
+      &.warning {
+        background: #fffff0;
+      }
+    
     }
 
-    &.warning {
-      background: #fffff0;
-    }
-  
-  }
-
-  th {
-    height: 8em;
-  }
-
-  .breakdown, { 
-    font-size: 65%;
-  }
-
-  .unknown, { 
-    font-size: 65%;
-  }
-
-  .minor { 
-    font-size: 75%;
-  }
-
-  .major { 
-    font-size: 85%;
   }
 
 }
