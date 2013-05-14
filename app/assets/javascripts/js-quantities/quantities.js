@@ -446,7 +446,7 @@
     }
 
     if(val.trim() === '') {
-      throw "Unit not recognized";
+      throw "Unit not recognized: " + val;
     }
 
     this.scalar = result[1] ? parseFloat(result[1]) : 1.0;
@@ -493,7 +493,7 @@
     // Scan
     if(top) {
       if(!UNIT_TEST_REGEX.test(top)) {
-        throw "Unit not recognized";
+        throw "Unit not recognized: " + top;
       }
       this.numerator = [];
       while((unit_match = UNIT_MATCH_REGEX.exec(top))) {
@@ -502,7 +502,7 @@
     }
     if(bottom) {
       if(!UNIT_TEST_REGEX.test(bottom)) {
-        throw "Unit not recognized";
+        throw "Unit not recognized: " + bottom;
       }
       this.denominator = [];
       while((unit_match = UNIT_MATCH_REGEX.exec(bottom))) {

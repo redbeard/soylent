@@ -12,7 +12,7 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     new IngredientElement("Fibre", new Qty("40 g")), 
     new IngredientElement("Calcium", new Qty("1 g")), 
     new IngredientElement("Iron", new Qty("9 mg")), 
-    new IngredientElement("Phosphorous ", new Qty("1g")), 
+    new IngredientElement("Phosphorus", new Qty("1g")), 
     new IngredientElement("Iodine", new Qty("150 microgram")), 
     new IngredientElement("Magnesium", new Qty("400mg")), 
     new IngredientElement("Zinc", new Qty("15mg")), 
@@ -65,9 +65,7 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     @product_to_add() != null
 
   $scope.add_product = (product_to_add)->
-    console.log product_to_add
-    @recipe.serving_contents.push product_to_add.in_quantity( product_to_add.quantity )
-    $scope.recipeTreeTableModel.refresh()
+    $scope.recipeTreeTableModel.add_product(product_to_add)
 
   $scope.refreshAfterTimeout = ()->
     if ($scope.timeoutPromise)
@@ -77,18 +75,28 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     $scope.timeoutPromise = $timeout ( ()-> $scope.recipeTreeTableModel.refresh() ), 500
 
   $scope.recipe = new Recipe [ 
-    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("25ml") ),
+#    $products_repository.findBySubstring("Butter")[0].in_quantity( new Qty("33g") ),
+    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("29ml") ),
 #    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("151.0g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("280g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("90.0g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("290g") ),
+    $products_repository.findBySubstring("Fiber")[0].in_quantity( new Qty("39 g") ),
 #    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),
-    $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
-    $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
-    $products_repository.findBySubstring("Pantothenic acid")[0].in_quantity( new Qty("10 mg") ),
+#    $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
+#    $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
+#    $products_repository.findBySubstring("Pantothenic acid")[0].in_quantity( new Qty("10 mg") ),
     $products_repository.findBySubstring("Potassium")[0].in_quantity( new Qty("12.5 g") ),
-    $products_repository.findBySubstring("Sea Salt")[0].in_quantity( new Qty("2.3 g") ),
+    $products_repository.findBySubstring("Sea Salt")[0].in_quantity( new Qty("3 g") ),
     $products_repository.findBySubstring("Copper Gluconate")[0].in_quantity( new Qty("200 mg") ),
-    $products_repository.findBySubstring("Swisse")[0].in_quantity( new Qty("1 count") ),
+#    $products_repository.findBySubstring("Swisse")[0].in_quantity( new Qty("1 count") ),
+    $products_repository.findBySubstring("Max Potency")[0].in_quantity( new Qty("3 count") ),
+    $products_repository.findBySubstring("Multi-Vitamin")[0].in_quantity( new Qty("1 count") ),
+    $products_repository.findBySubstring("Calcium/magnesium")[0].in_quantity( new Qty("1 count") ),
+    $products_repository.findBySubstring("Inositol")[0].in_quantity( new Qty("2 count") ),
+    $products_repository.findBySubstring("Creatine")[0].in_quantity( new Qty("5g") ),
+    $products_repository.findBySubstring("MSM")[0].in_quantity( new Qty("6g") ),
+    $products_repository.findBySubstring("Fish Oil")[0].in_quantity( new Qty("3.1ml") ),
+    $products_repository.findBySubstring("Monosodium Phosphate")[0].in_quantity( new Qty("4g") ),
   ]
 
   $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
@@ -103,7 +111,7 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     "Calcium": { "preferred_unit": "g", "column_class": "major" }, 
     "Chloride": { "preferred_unit": "g", "column_class": "minor" }, 
     "Iron": { "preferred_unit": "mg", "column_class": "minor" }, 
-    "Phosphorous ": { "preferred_unit": "g", "column_class": "minor" }, 
+    "Phosphorus": { "preferred_unit": "g", "column_class": "minor" }, 
     "Iodine": { "preferred_unit": "microgram", "column_class": "minor" }, 
     "Magnesium": { "preferred_unit": "mg", "column_class": "minor" }, 
     "Zinc": { "preferred_unit": "mg", "column_class": "minor" }, 

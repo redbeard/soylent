@@ -7,12 +7,19 @@ class window.IngredientsTreeTableNode
 
   children: ()->
     _t = this
-    @_children ||= @ingredient.contents().map (i)-> new IngredientsTreeTableNode(_t.model, _t, i, "ingredient")
+    @_children ||= @ingredient.contents().map (i)-> _t.create_child_for(i)
+
+  create_child_for: (ingredient)->
+    new IngredientsTreeTableNode(@model, this, ingredient, "ingredient")
+
+  add_child_ingredient: (ingredient)->
+    @ingredient.serving_contents.push ingredient
+    @children().push @create_child_for(ingredient)
 
   delete_child: (child_node)->
     @ingredient.remove(child_node.ingredient)
     @_children = @_children.filter (ch)-> ch != child_node
-    @refresh()
+    @model.refresh()
 
   total_for: (element_name)->
     @cached_totals()[element_name]
@@ -44,6 +51,11 @@ class window.IngredientsTreeTableModel
 
   refresh: ()->
     @revision = @revision + 1
+
+  add_product: (product_to_add)->
+    console.log product_to_add
+    @recipe_node.add_child_ingredient( product_to_add.in_quantity( product_to_add.quantity ) )
+    @refresh()
 
   template_for: (row, column)->
     if (row == @recommendation_node) && (column.preferences.column_class == 'macro')
@@ -83,12 +95,23 @@ class window.IngredientsTreeTableModel
     percent_difference_for = @percent_difference_for(column)
 
     return "none" unless percent_difference_for
-    need_less_or_more = "need_more" if percent_difference_for.quantity.scalar < 0
-    need_less_or_more = "need_less" if percent_difference_for.quantity.scalar > 0
 
-    return "#{need_less_or_more} good" if (Math.abs(percent_difference_for.quantity.scalar) <= 5.0)
-    return "#{need_less_or_more} warning" if (Math.abs(percent_difference_for.quantity.scalar) <= 15.0)
-    return "#{need_less_or_more} bad"
+    scalar = percent_difference_for.quantity.scalar
+    scalar_s = scalar.toPrecision(2)
+
+    need_more = scalar < 0
+    need_less = scalar > 0
+
+
+    return "#{scalar_s} good" if (Math.abs(scalar) <= 5.0)
+
+    return "#{scalar_s} bad" if (scalar <= -15.0)
+    return "#{scalar_s} warning" if (scalar <= -10.0)
+
+    return "#{scalar_s} bad" if (scalar > 2000.0)
+    return "#{scalar_s} warning" if (scalar > 20.0)
+
+    return "#{scalar_s} good"
 
   columns: ()->
     return @_columns if @_columns
