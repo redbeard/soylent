@@ -205,6 +205,7 @@ class window.ProductsRepositoryService
       [ 
         new ProductSource("Amazon.com (51 ounce bottle)", "http://www.amazon.com/Bertolli-Extra-Tasting-51-Ounce-Bottle/dp/B000WHR2MU", new Qty("51 floz"), new Qty("0.35 USD/floz")),
         new ProductSource("doorbuster.com.au (2 x 2L bottles)", "http://www.doorbuster.com.au/bertolli-2l-olive-oil-extra-light.html", new Qty("4 litres"), new Qty("9 AUD/litre")),
+        new ProductSource("Woolworths Online (1l bottle)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D12339%26name%3Dbertolli-extra-virgin-olive-oil%26search%3Dextra%2Bvirgin%2Boil%2Bolive", new Qty("1 litres"), new Qty("8 AUD/litre")),
       ], 
       new Qty("15 ml"), [ 
         new IngredientElement("Energy", new Qty("120 kilocalories")),
@@ -221,8 +222,21 @@ class window.ProductsRepositoryService
       ], 
       new Qty("1.5 g"), [ 
         new IngredientElement("Sodium", new Qty("590mg")),
-        new IngredientElement("Chloride", new Qty("909.62mg")),
+        new IngredientElement("Chlorine", new Qty("909.62mg")),
         new IngredientElement("Iodine", new Qty("67.5 microgram")),
+      ]
+
+    @products.push new Product "Salt Iodized (Generic)", 
+      [ 
+        new ProductSource("Woolworths Online (Homebrand 500g package)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D204373%26name%3Dhomebrand-iodised-salt-drum%26search%3Diodized", new Qty("500g"), new Qty("1.92 AUD/kg")),
+        new ProductSource("Woolworths Online (SAXA Cooking Salt Iodized 1kg package)", "http://www2.woolworthsonline.com.au/Shop/ProductDetails?Stockcode=306494&name=saxa-salt-cooking-iodised&search=iodized", new Qty("1kg"), new Qty("1.8 AUD/kg")),
+        new ProductSource("Amazon.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+        new ProductSource("iHerb.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://au.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+      ], 
+      new Qty("1.5 g"), [ 
+        new IngredientElement("Sodium", new Qty("590mg")),
+        new IngredientElement("Chlorine", new Qty("909.62mg")),
+        new IngredientElement("Iodine", new Qty("67.5 microgram")), # Estimated
       ]
 
     @products.push new Product "NOW Foods Calcium/magnesium 1000/500 mg", 
@@ -303,6 +317,25 @@ class window.ProductsRepositoryService
       ], 
       new Qty("3.48g"), [ 
         new IngredientElement("Potassium", new Qty("540mg")),
+      ]
+
+    @products.push new Product "NOW Foods Potassium Chloride Powder", 
+      [ 
+        new ProductSource("iHerb.com (8oz package)", "http://www.iherb.com/Now-Foods-Potassium-Chloride-Powder-8-oz-227-g/777", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
+        new ProductSource("Amazon.com (8oz package)", "http://www.amazon.com/Potassium-Chloride-Powder-From-Foods/dp/B009K6T7OA", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
+      ], 
+      new Qty("1.4g"), [ 
+        new IngredientElement("Potassium", new Qty("730mg")),
+        new IngredientElement("Chlorine", new Qty("654mg")),
+      ]
+
+    @products.push new Product "NOW Foods Iron 18mg", 
+      [ 
+        new ProductSource("Amazon.com (120 caps package)", "http://www.amazon.com/dp/B000WQDD2O", new Qty("120 count"), new Qty("0.064833333 USD/each")),
+        new ProductSource("iHerb.com (120 caps package)", "http://www.iherb.com/Now-Foods-Iron-18-mg-120-Veggie-Caps/10481", new Qty("120 count"), new Qty("0.058333333 USD/each")),
+      ], 
+      new Qty("1 count"), [ 
+        new IngredientElement("Iron", new Qty("18mg")),
       ]
 
     @products.push new Product "Swanson Potassium Citrate (capsules)", 
@@ -423,6 +456,52 @@ class window.ProductsRepositoryService
         new IngredientElement("Lutein", new Qty("500 microgram")),             
         new IngredientElement("Ginseng", new Qty("100 mg")),             
         new IngredientElement("Lycopene", new Qty("2 mg")),             
+      ]   
+
+    @products.push new Product "Optimum Nutrition Opti Men", 
+      [ 
+        new ProductSource("a1supplements.com (180 tablets)", "http://www.a1supplements.com/Opti-Men-180-Tablets-p-2504.html", new Qty("180 count"), new Qty(".133055556 USD/each")),
+        new ProductSource("mydailyvita.com (180 tablets)", "http://mydailyvita.com/a/index.php?main_page=product_info&cPath=59&products_id=884", new Qty("180 count"), new Qty(".294166667 AUD/each")),
+        new ProductSource("supplementsdirect.com.au (180 tablets)", "http://www.supplementsdirect.com.au/optimum-nutrition-opti-men-180-tablets/?utm_source=myshopping&utm_medium=cpc&utm_campaign=Vitamins+and+Nutrition&utm_term=Optimum+Nutrition+Opti+Men+180+Tablets", new Qty("180 count"), new Qty(".333055556 AUD/each")),
+      ], 
+      new Qty("3 count"), [ 
+        new IngredientElement("Vitamin A", new Qty("10000 IU")),
+        new IngredientElement("Vitamin C", new Qty("300 mg")),
+        new IngredientElement("Vitamin D", new Qty("300 IU")),
+        new IngredientElement("Vitamin E", new Qty("200 IU")),
+        new IngredientElement("Vitamin K", new Qty("75 microgram")),
+        new IngredientElement("Thiamin", new Qty("75 mg")),
+        new IngredientElement("Riboflavin",  new Qty("75 mg")),
+        new IngredientElement("Niacin", new Qty("75 mg")),
+        new IngredientElement("Folate",  new Qty("600 microgram")),
+        new IngredientElement("Vitamin B6", new Qty("50 mg")),
+        new IngredientElement("Vitamin B12", new Qty("100 microgram")),
+        new IngredientElement("Biotin", new Qty("300 microgram")),
+        new IngredientElement("Pantothenic acid", new Qty("75 mg")),
+        new IngredientElement("Calcium", new Qty("200 mg")),
+        new IngredientElement("Iodine", new Qty("150 microgram")),
+        new IngredientElement("Magnesium", new Qty("100 mg")),
+        new IngredientElement("Zinc", new Qty("30 mg")),
+        new IngredientElement("Selenium", new Qty("200 microgram")),
+        new IngredientElement("Copper", new Qty("2 mg")),
+        new IngredientElement("Manganese", new Qty("5 mg")),
+        new IngredientElement("Chromium", new Qty("120 microgram")),
+        new IngredientElement("Molybdenum", new Qty("80 microgram")),
+        new IngredientElement("Alpha Lipoic acid",  new Qty("25 mg")),
+        new IngredientElement("PABA", new Qty("10 mg")),
+        new IngredientElement("Choline", new Qty("10 mg")),
+        new IngredientElement("Inositol",  new Qty("10 mg")),
+        new IngredientElement("Silica",  new Qty("5 mg")),
+        new IngredientElement("Boron",  new Qty("2 mg")),
+        new IngredientElement("Lycopene", new Qty("500 microgram")),
+        new IngredientElement("Lutein",  new Qty("500 microgram")),
+        new IngredientElement("Alpha Carotene",  new Qty("140 microgram")),
+        new IngredientElement("Vanadium",  new Qty("100 microgram")),
+        new IngredientElement("Cryptoxanthin",  new Qty("34 microgram")),
+        new IngredientElement("Zeaxanthin",  new Qty("28 microgram")),           
+        # Estimated:
+        new IngredientElement("Ginseng", new Qty("50 microgram")),
+        new IngredientElement("Gingko Biloba", new Qty("100 microgram")),
       ]   
 
     @products.push new Product "Nature's Way Alive! Once Daily Multi-Vitamin", 

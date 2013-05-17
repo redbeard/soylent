@@ -9,7 +9,7 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     new IngredientElement("Fats", new Qty("40.1 g")), 
     new IngredientElement("Sodium", new Qty("2.4 g")), 
     new IngredientElement("Potassium", new Qty("4.5 g")), 
-    new IngredientElement("Chloride", new Qty("3.4 g")), 
+    new IngredientElement("Chlorine", new Qty("3.4 g")), 
     new IngredientElement("Fibre", new Qty("40 g")), 
     new IngredientElement("Calcium", new Qty("1 g")), 
     new IngredientElement("Iron", new Qty("9 mg")), 
@@ -86,12 +86,15 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
 #    $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
 #    $products_repository.findBySubstring("Calcium Carbonate")[0].in_quantity( new Qty("2.5 g") ),
 #    $products_repository.findBySubstring("Pantothenic acid")[0].in_quantity( new Qty("10 mg") ),
-    $products_repository.findBySubstring("Potassium Gluconate Powder")[0].in_quantity( new Qty("29 g") ),
-    $products_repository.findBySubstring("Sea Salt")[0].in_quantity( new Qty("3 g") ),
+#    $products_repository.findBySubstring("Potassium Gluconate Powder")[0].in_quantity( new Qty("29 g") ),
+    $products_repository.findBySubstring("Potassium Chloride")[0].in_quantity( new Qty("7 g") ),
+    $products_repository.findBySubstring("Salt Iodized (Generic)")[0].in_quantity( new Qty("0.5 g") ),
 #    $products_repository.findBySubstring("Copper Gluconate")[0].in_quantity( new Qty("200 mg") ),
-    $products_repository.findBySubstring("Swisse")[0].in_quantity( new Qty("1 count") ),
+#    $products_repository.findBySubstring("Swisse")[0].in_quantity( new Qty("1 count") ),
 #    $products_repository.findBySubstring("Max Potency")[0].in_quantity( new Qty("3 count") ),
-    $products_repository.findBySubstring("Multi-Vitamin")[0].in_quantity( new Qty("1 count") ),
+#    $products_repository.findBySubstring("Multi-Vitamin")[0].in_quantity( new Qty("1 count") ),
+    $products_repository.findBySubstring("Opti Men")[0].in_quantity( new Qty("3 count") ),
+    $products_repository.findBySubstring("Iron")[0].in_quantity( new Qty("1 count") ),
     $products_repository.findBySubstring("Calcium/magnesium")[0].in_quantity( new Qty("1 count") ),
     $products_repository.findBySubstring("Inositol")[0].in_quantity( new Qty("2 count") ),
     $products_repository.findBySubstring("Creatine")[0].in_quantity( new Qty("5g") ),
@@ -100,6 +103,8 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     $products_repository.findBySubstring("Monosodium Phosphate")[0].in_quantity( new Qty("4g") ),
   ]
 
+  # Limit sources:
+  # http://www.medicalonline.com.au/medical/nutrition/rdi.htm
   $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
     "Price": { preferred_unit: "AUD", column_class: "major" }, 
     "Energy": { preferred_unit: "kilocalorie", column_class: "macro" }, 
@@ -107,11 +112,11 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
     "Carbohydrates": { preferred_unit: "g", column_class: "macro" }, 
     "Fats": { preferred_unit: "g", column_class: "macro" }, 
     "Fibre": { preferred_unit: "g", column_class: "major" }, 
-    "Sodium": { preferred_unit: "mg", column_class: "major" }, 
-    "Potassium": { preferred_unit: "g", column_class: "major" }, 
+    "Sodium": { preferred_unit: "mg", column_class: "major", lower_limit: new Qty("920mg"), upper_limit: new Qty("2300mg") }, 
+    "Potassium": { preferred_unit: "g", column_class: "major", lower_limit: new Qty("1950mg"), upper_limit: new Qty("5460mg") }, 
     "Calcium": { preferred_unit: "g", column_class: "major" }, 
-    "Chloride": { preferred_unit: "g", column_class: "minor" }, 
-    "Iron": { preferred_unit: "mg", column_class: "minor" }, 
+    "Chlorine": { preferred_unit: "g", column_class: "minor" }, 
+    "Iron": { preferred_unit: "mg", column_class: "minor", lower_limit: new Qty("15 microgram"), upper_limit: new Qty("200mg") }, # Poison at 40mg/kg, but did 10% of 50kg just in case
     "Phosphorus": { preferred_unit: "g", column_class: "minor" }, 
     "Iodine": { preferred_unit: "microgram", column_class: "minor" }, 
     "Magnesium": { preferred_unit: "mg", column_class: "minor" }, 
