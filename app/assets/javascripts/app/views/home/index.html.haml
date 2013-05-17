@@ -1,3 +1,4 @@
+#recipe2
 #recipe.container-fluid
   .row-fluid
     .span12
@@ -53,6 +54,9 @@
         .pref
           %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
             Show breakdown
+  .row-fluid
+    .json.span12
+      {{recipe | json}}
   .row-fluid
     .footer.span12
       .copyright

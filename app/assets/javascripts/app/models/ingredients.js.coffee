@@ -33,11 +33,9 @@ class window.IngredientElement
     new IngredientElement(@name, @quantity.sub(ingredient_element.quantity))
 
   totals: ()->
-    return @_totals if @_totals 
-
-    @_totals = new IngredientElements()
-    @_totals[@name] = this
-    @_totals
+    _totals = new IngredientElements()
+    _totals[@name] = this
+    _totals
 
   toString: ()->
     "#{@name}:\t#{@quantity.toString()}"

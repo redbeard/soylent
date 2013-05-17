@@ -20,6 +20,99 @@ class window.ProductsRepositoryService
         new IngredientElement("Fats (saturated)", new Qty("1.6g")),
         new IngredientElement("Fibre", new Qty("10.2g")),
         new IngredientElement("Sodium", new Qty("2.6mg")),    
+        # Estimates
+        new IngredientElement("Potassium", new Qty("429 mg")),
+        new IngredientElement("Calcium", new Qty("54 mg")),
+        new IngredientElement("Iron", new Qty("4.72 mg")),
+        new IngredientElement("Magnesium", new Qty("177 mg")),
+        new IngredientElement("Phosphorus", new Qty("523 mg")),
+        new IngredientElement("Zinc", new Qty("3.97 mg")),
+        new IngredientElement("Copper", new Qty("0.626 mg")),
+        new IngredientElement("Manganese", new Qty("4.916 mg")),
+        new IngredientElement("Thiamin", new Qty("0.763 mg")),
+        new IngredientElement("Riboflavin", new Qty("0.139 mg")),
+        new IngredientElement("Niacin", new Qty("0.961 mg")),
+        new IngredientElement("Pantothenic acid", new Qty("1.349 mg")),
+        new IngredientElement("Vitamin B6", new Qty("0.119 mg")),
+        new IngredientElement("Folate", new Qty("56 microgram")),
+        new IngredientElement("Tryptophan", new Qty("0.234 g")),
+        new IngredientElement("Threonine", new Qty("0.575 g")),
+        new IngredientElement("Isoleucine", new Qty("0.694 g")),
+        new IngredientElement("Leucine", new Qty("1.284 g")),
+        new IngredientElement("Lysine", new Qty("0.701 g")),
+        new IngredientElement("Methionine", new Qty("0.312 g")),
+        new IngredientElement("Cystine", new Qty("0.408 g")),
+        new IngredientElement("Phenylalanine", new Qty("0.895 g")),
+        new IngredientElement("Tyrosine", new Qty("0.573 g")),
+        new IngredientElement("Valine", new Qty("0.937 g")),
+        new IngredientElement("Arginine", new Qty("1.192 g")),
+        new IngredientElement("Histidine", new Qty("0.405 g")),
+        new IngredientElement("Alanine", new Qty("0.881 g")),
+        new IngredientElement("Aspartic acid", new Qty("1.448 g")),
+        new IngredientElement("Glutamic acid", new Qty("3.712 g")),
+        new IngredientElement("Glycine", new Qty("0.841 g")),
+        new IngredientElement("Proline", new Qty("0.934 g")),
+        new IngredientElement("Serine", new Qty("0.750 g")),        
+      ]
+
+    @products.push new Product "Lowan Wholefoods Quick Oats", 
+      [ new ProductSource("Woolworths Online (1kg package)", "http://www2.woolworthsonline.com.au/Shop/ProductDetails?Stockcode=321862&name=lowan-oats-quick-wholegrain", new Qty("1kg"), new Qty("4.14 AUD/kg")) ], 
+      new Qty("100g"), [ 
+        new IngredientElement("Energy", new Qty("1610 kJ")), 
+        new IngredientElement("Protein", new Qty("10.5g")), 
+        new IngredientElement("Carbohydrates", new Qty("61g")),
+        new IngredientElement("Carbohydrates (sugars)", new Qty("0.9g")),
+        new IngredientElement("Fats", new Qty("8.5g")),
+        new IngredientElement("Fats (saturated)", new Qty("1.5g")),
+        new IngredientElement("Fibre", new Qty("10g")),
+        new IngredientElement("Sodium", new Qty("3mg")),    
+        new IngredientElement("Potassium", new Qty("0.5mg")),    
+      ]
+
+    @products.push new Product "Oats (generic)", 
+      [ new ProductSource("Wikipedia", "http://en.wikipedia.org/wiki/Oats", new Qty("1kg"), new Qty("5 AUD/kg")) ], 
+      new Qty("100g"), [ 
+        new IngredientElement("Energy", new Qty("389 kcal")),
+        new IngredientElement("Protein", new Qty("16.89 g")),
+        new IngredientElement("Fats", new Qty("6.90 g")),
+        new IngredientElement("Ash", new Qty("1.72 g")),
+        new IngredientElement("Carbohydrates", new Qty("66.27 g")),
+        new IngredientElement("Fibre", new Qty("10.6 g")),
+        new IngredientElement("Calcium", new Qty("54 mg")),
+        new IngredientElement("Iron", new Qty("4.72 mg")),
+        new IngredientElement("Magnesium", new Qty("177 mg")),
+        new IngredientElement("Phosphorus", new Qty("523 mg")),
+        new IngredientElement("Potassium", new Qty("429 mg")),
+        new IngredientElement("Sodium", new Qty("2 mg")),
+        new IngredientElement("Zinc", new Qty("3.97 mg")),
+        new IngredientElement("Copper", new Qty("0.626 mg")),
+        new IngredientElement("Manganese", new Qty("4.916 mg")),
+        new IngredientElement("Vitamin C", new Qty("0.0 mg")),
+        new IngredientElement("Thiamin", new Qty("0.763 mg")),
+        new IngredientElement("Riboflavin", new Qty("0.139 mg")),
+        new IngredientElement("Niacin", new Qty("0.961 mg")),
+        new IngredientElement("Pantothenic acid", new Qty("1.349 mg")),
+        new IngredientElement("Vitamin B6", new Qty("0.119 mg")),
+        new IngredientElement("Folate", new Qty("56 microgram")),
+        new IngredientElement("Cholesterol", new Qty("0 mg")),
+        new IngredientElement("Tryptophan", new Qty("0.234 g")),
+        new IngredientElement("Threonine", new Qty("0.575 g")),
+        new IngredientElement("Isoleucine", new Qty("0.694 g")),
+        new IngredientElement("Leucine", new Qty("1.284 g")),
+        new IngredientElement("Lysine", new Qty("0.701 g")),
+        new IngredientElement("Methionine", new Qty("0.312 g")),
+        new IngredientElement("Cystine", new Qty("0.408 g")),
+        new IngredientElement("Phenylalanine", new Qty("0.895 g")),
+        new IngredientElement("Tyrosine", new Qty("0.573 g")),
+        new IngredientElement("Valine", new Qty("0.937 g")),
+        new IngredientElement("Arginine", new Qty("1.192 g")),
+        new IngredientElement("Histidine", new Qty("0.405 g")),
+        new IngredientElement("Alanine", new Qty("0.881 g")),
+        new IngredientElement("Aspartic acid", new Qty("1.448 g")),
+        new IngredientElement("Glutamic acid", new Qty("3.712 g")),
+        new IngredientElement("Glycine", new Qty("0.841 g")),
+        new IngredientElement("Proline", new Qty("0.934 g")),
+        new IngredientElement("Serine", new Qty("0.750 g")),
       ]
 
     @products.push new Product "Whey Protein Isolate - Natural", 
@@ -192,7 +285,7 @@ class window.ProductsRepositoryService
         new IngredientElement("Copper", new Qty("1.6mg")),
       ]
 
-    @products.push new Product "Potassium Citrate", 
+    @products.push new Product "Potassium Citrate Powder", 
       [ 
         new ProductSource("PureBulk.com (250g package)", "http://purebulk.com/potassium-citrate-powder.html", new Qty("250g"), new Qty("40 USD/kg")),
         new ProductSource("PureBulk.com (500g package)", "http://purebulk.com/potassium-citrate-powder.html", new Qty("500g"), new Qty("36 USD/kg")),
@@ -200,6 +293,23 @@ class window.ProductsRepositoryService
         new ProductSource("PureBulk.com (1.5kg package)", "http://purebulk.com/potassium-citrate-powder.html", new Qty("1.5kg"), new Qty("30.83 USD/kg")),
       ], 
       new Qty("275mg"), [ 
+        new IngredientElement("Potassium", new Qty("99mg")),
+      ]
+
+    @products.push new Product "NOW Foods Potassium Gluconate Powder", 
+      [ 
+        new ProductSource("iHerb.com (1lb package)", "http://au.iherb.com/now-foods-potassium-gluconate-100-pure-powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.1 AUD/lb")),
+        new ProductSource("Amazin.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2", new Qty("1lb"), new Qty("14.47 USD/lb")),
+      ], 
+      new Qty("3.48g"), [ 
+        new IngredientElement("Potassium", new Qty("540mg")),
+      ]
+
+    @products.push new Product "Swanson Potassium Citrate (capsules)", 
+      [ 
+        new ProductSource("MyDailyVita.com", "http://mydailyvita.com/a/index.php?main_page=product_info&cPath=32&products_id=738", new Qty("120 count"), new Qty("0.132916667 AUD/each")),
+      ], 
+      new Qty("1 count"), [ 
         new IngredientElement("Potassium", new Qty("99mg")),
       ]
 
