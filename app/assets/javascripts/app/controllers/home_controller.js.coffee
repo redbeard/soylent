@@ -1,51 +1,52 @@
-window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
+window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$elements_repository', ($scope, $http, $timeout, $products_repository, $elements) ->
 
   $scope.products_repository = $products_repository
+  $scope.elements = $elements
 
   $scope.recommendation = new Recommendation [
-    new IngredientElement("Energy", new Qty("1817 kcal")), 
-    new IngredientElement("Carbohydrates", new Qty("90.2 g")), 
-    new IngredientElement("Protein", new Qty("274 g")), 
-    new IngredientElement("Fats", new Qty("40.1 g")), 
-    new IngredientElement("Sodium", new Qty("2.4 g")), 
-    new IngredientElement("Potassium", new Qty("4.5 g")), 
-    new IngredientElement("Chlorine", new Qty("3.4 g")), 
-    new IngredientElement("Fibre", new Qty("40 g")), 
-    new IngredientElement("Calcium", new Qty("1 g")), 
-    new IngredientElement("Iron", new Qty("9 mg")), 
-    new IngredientElement("Phosphorus", new Qty("1g")), 
-    new IngredientElement("Iodine", new Qty("150 microgram")), 
-    new IngredientElement("Magnesium", new Qty("400mg")), 
-    new IngredientElement("Zinc", new Qty("15mg")), 
-    new IngredientElement("Selenium", new Qty("7 microgram")), 
-    new IngredientElement("Copper", new Qty("2 mg")), 
-    new IngredientElement("Manganese", new Qty("2 mg")), 
-    new IngredientElement("Chromium", new Qty("12 microgram")), 
-    new IngredientElement("Molybdenum", new Qty("75 microgram")), 
-    new IngredientElement("Vitamin A", new Qty("5000 IU")), 
-    new IngredientElement("Vitamin B6", new Qty("2 mg")), 
-    new IngredientElement("Vitamin B12", new Qty("6 microgram")), 
-    new IngredientElement("Vitamin C", new Qty("0.06g")), 
-    new IngredientElement("Vitamin D", new Qty("400 IU")), 
-    new IngredientElement("Vitamin E", new Qty("30 IU")), 
-    new IngredientElement("Vitamin K", new Qty("8 microgram")), 
-    new IngredientElement("Thiamin", new Qty("1.5 mg")), 
-    new IngredientElement("Riboflavin", new Qty("1.7 mg")), 
-    new IngredientElement("Niacin", new Qty("20 mg")), 
-    new IngredientElement("Folate", new Qty("400 microgram")), 
-    new IngredientElement("Biotin", new Qty("300 microgram")), 
-    new IngredientElement("Pantothenic acid", new Qty("10 mg")), 
-    new IngredientElement("Choline", new Qty("550mg")), 
-    new IngredientElement("Sulfur", new Qty("2g")),
-    new IngredientElement("Lithium", new Qty("0g")),
-    new IngredientElement("Creatine", new Qty("5g")),
-    new IngredientElement("Lycopene", new Qty("500 microgram")),
-    new IngredientElement("Omega-3 Fatty Acids", new Qty("750 mg")),
-    new IngredientElement("Ginseng", new Qty("50 microgram")),
-    new IngredientElement("Gingko Biloba", new Qty("100 microgram")),
-    new IngredientElement("Lutein", new Qty("500 microgram")),
-    new IngredientElement("Alpha Carotene", new Qty("140 microgram")),
-    new IngredientElement("Vanadium", new Qty("100 microgram")),
+    $elements.Energy.in_quantity("1817 kcal"), 
+    $elements.Carbohydrates.in_quantity("90.2 g"), 
+    $elements.Protein.in_quantity("274 g"), 
+    $elements.Fats.in_quantity("40.1 g"), 
+    $elements.Sodium.in_quantity("2.4 g"), 
+    $elements.Potassium.in_quantity("4.5 g"), 
+    $elements.Chlorine.in_quantity("3.4 g"), 
+    $elements.Fibre.in_quantity("40 g"), 
+    $elements.Calcium.in_quantity("1 g"), 
+    $elements.Iron.in_quantity("9 mg"), 
+    $elements.Phosphorus.in_quantity("1g"), 
+    $elements.Iodine.in_quantity("150 microgram"), 
+    $elements.Magnesium.in_quantity("400mg"), 
+    $elements.Zinc.in_quantity("15mg"), 
+    $elements.Selenium.in_quantity("7 microgram"), 
+    $elements.Copper.in_quantity("2 mg"), 
+    $elements.Manganese.in_quantity("2 mg"), 
+    $elements.Chromium.in_quantity("12 microgram"), 
+    $elements.Molybdenum.in_quantity("75 microgram"), 
+    $elements["Vitamin A"].in_quantity("5000 IU"), 
+    $elements["Vitamin B6"].in_quantity("2 mg"), 
+    $elements["Vitamin B12"].in_quantity("6 microgram"), 
+    $elements["Vitamin C"].in_quantity("0.06g"), 
+    $elements["Vitamin D"].in_quantity("400 IU"), 
+    $elements["Vitamin E"].in_quantity("30 IU"), 
+    $elements["Vitamin K"].in_quantity("8 microgram"), 
+    $elements.Thiamin.in_quantity("1.5 mg"), 
+    $elements.Riboflavin.in_quantity("1.7 mg"), 
+    $elements.Niacin.in_quantity("20 mg"), 
+    $elements.Folate.in_quantity("400 microgram"), 
+    $elements.Biotin.in_quantity("300 microgram"), 
+    $elements["Pantothenic acid"].in_quantity("10 mg"), 
+    $elements.Choline.in_quantity("550mg"), 
+    $elements.Sulfur.in_quantity("2g"),
+    $elements.Lithium.in_quantity("0g"),
+    $elements.Creatine.in_quantity("5g"),
+    $elements.Lycopene.in_quantity("500 microgram"),
+    $elements["Omega-3 Fatty Acids"].in_quantity("750 mg"),
+    $elements.Ginseng.in_quantity("50 microgram"),
+    $elements["Gingko Biloba"].in_quantity("100 microgram"),
+    $elements.Lutein.in_quantity("500 microgram"),
+    $elements["Alpha Carotene"].in_quantity("140 microgram"),
+    $elements.Vanadium.in_quantity("100 microgram"),
   ]
 
   $scope.selected_product_to_add = null
@@ -105,7 +106,7 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
 
   # Limit sources:
   # http://www.medicalonline.com.au/medical/nutrition/rdi.htm
-  $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.recommendation, $scope.recipe, {
+  $scope.recipeTreeTableModel = new IngredientsTreeTableModel($scope.elements, $scope.recommendation, $scope.recipe, {
     "Price": { preferred_unit: "AUD", column_class: "major" }, 
     "Energy": { preferred_unit: "kilocalorie", column_class: "macro" }, 
     "Protein": { preferred_unit: "g", column_class: "macro" }, 
@@ -173,3 +174,4 @@ window.HomeCtrl = ($scope, $http, $timeout, $products_repository) ->
   } )
 
   this
+]

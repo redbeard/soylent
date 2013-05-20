@@ -1,44 +1,66 @@
-class window.IngredientElement
-  constructor: (name, quantity)->
+String.prototype.as_qty = ()->
+  new Qty(this)
+
+Qty.prototype.as_qty = ()->
+  this
+
+class window.Element
+  constructor: (name, preferred_unit, column_class = "unknown", lower_limit = null, upper_limit = null)->
     @name = name
-    @quantity = quantity
+    @preferred_unit = preferred_unit
+    @column_class = column_class 
+    @lower_limit = lower_limit 
+    @upper_limit = upper_limit
+
+  in_quantity: (desired_quantity)->
+    new IngredientElement(this, desired_quantity.as_qty())
+
+  toString: ()->
+    "#{@name}"
+
+class window.IngredientElement
+  constructor: (element, quantity)->
+    @element = element
+    throw "Element parameter is not an element! It is a #{element.__proto__.constructor.name}. '#{element.toString()}'" if (element.__proto__.constructor != Element)
+    @name = element.name
+    @quantity = quantity.as_qty()
 
   contents: ()->
     [ this ]
 
   in_quantity: (desired_quantity)->
     throw "Incompatible quantities, element's: #{@quantity}, given: #{desired_quantity}" unless @quantity.isCompatible(desired_quantity)
-    new IngredientElement(@name, desired_quantity)
+    new IngredientElement(@element, desired_quantity.as_qty())
 
   mul: (scale)->
     scaled_quantity = @quantity.mul(scale)
     scaled_quantity = scaled_quantity.to(@quantity.units()) if scaled_quantity.isCompatible(@quantity)
-    new IngredientElement @name, scaled_quantity
+    new IngredientElement @element, scaled_quantity
 
   in_scale: IngredientElement.prototype.mul
 
   div: (scale)->
     scaled_quantity = @quantity.div(scale)
     scaled_quantity = scaled_quantity.to(@quantity.units()) if scaled_quantity.isCompatible(@quantity)
-    new IngredientElement @name, scaled_quantity
+    new IngredientElement @element, scaled_quantity
 
   add: (ingredient_element)->
     return this if (ingredient_element == null) or (ingredient_element == undefined)
     throw "Incompatible element to add. This is (#{@toString()}). Tried adding: (#{ingredient_element.toString()})" unless (ingredient_element.name == @name and ingredient_element.quantity.isCompatible(@quantity))
-    new IngredientElement(@name, @quantity.add(ingredient_element.quantity))
+    new IngredientElement(@element, @quantity.add(ingredient_element.quantity))
 
   sub: (ingredient_element)->
     return this if (ingredient_element == null) or (ingredient_element == undefined)
     throw "Incompatible element to subtract. This is (#{@toString()}). Tried subtracting: (#{ingredient_element.toString()})" unless (ingredient_element.name == @name and ingredient_element.quantity.isCompatible(@quantity))
-    new IngredientElement(@name, @quantity.sub(ingredient_element.quantity))
+    new IngredientElement(@element, @quantity.sub(ingredient_element.quantity))
 
   totals: ()->
     _totals = new IngredientElements()
-    _totals[@name] = this
+    _totals[@element.name] = this
     _totals
 
   toString: ()->
-    "#{@name}:\t#{@quantity.toString()}"
+    "#{@element.toString()}:\t#{@quantity.toString()}"
 
 class window.IngredientElements 
   constructor: ()->
@@ -109,14 +131,11 @@ class window.IngredientElements
 class window.Ingredient
   constructor: (name, quantity, serving_contents)->
     @name = name
-    @quantity = quantity
+    @quantity = quantity.as_qty()
     @serving_contents = serving_contents
 
   totals: ()->
     @contents().reduce ( (accumulator, i)-> accumulator.add(i) ), new IngredientElements()
-
-  unique_element_names: ()->
-    Object.keys(@totals())
 
   contents_in_scale: (scale)->
     @contents().map (content)-> content.in_scale(scale)
@@ -134,8 +153,8 @@ class window.Ingredient
     @serving_contents = @serving_contents.filter (i) -> (i != ingredient)
 
   in_quantity: (desired_quantity)->
-    throw "Incompatible quantities, ingredient's: #{@quantity}, given: #{desired_quantity}" unless @quantity.isCompatible(desired_quantity)
-    scale = desired_quantity.div(@quantity)
+    throw "Incompatible quantities, ingredient's: #{@quantity}, given: #{desired_quantity}" unless @quantity.isCompatible(desired_quantity.as_qty())
+    scale = desired_quantity.as_qty().div(@quantity)
     @in_scale(scale)
 
   in_scale: (scale)->
@@ -153,10 +172,11 @@ class window.Recommendation extends Ingredient
     super "Recommended", new Qty("1 day"), serving_contents
 
 class window.Product extends Ingredient
-  constructor: (name, sources, serving_quantity, serving_contents)->
-    super(name, serving_quantity, serving_contents)
+  constructor: ($elements, name, sources, serving_quantity, serving_contents)->
+    super(name, serving_quantity.as_qty(), serving_contents)
+    @elements = $elements
     @sources = sources
-    @serving_contents = [ @best_price().as_ingredient().mul( serving_quantity ) ].concat(@serving_contents)
+    @serving_contents = [ @best_price().as_ingredient(@elements).mul( serving_quantity.as_qty() ) ].concat(@serving_contents)
 
   in_scale: (scale)->
     new ProductInQuantity(@product, "#{scale}")
@@ -172,7 +192,7 @@ class window.Product extends Ingredient
       ), null
 
   in_quantity: (desired_quantity)->
-    new ProductInQuantity(this, desired_quantity)
+    new ProductInQuantity(this, desired_quantity.as_qty())
 
   toString: ()->
     "#{@name}: Serving #{@quantity} contains:\n\t#{ @serving_contents.map( (i)-> i.toString() ).join("\n\t") }\n\tAvailable from:\n\t\t#{ @sources.map( (i)-> i.toString() ).join("\n\t\t") }"
@@ -182,7 +202,7 @@ class window.ProductInQuantity
     throw "Incompatible quantities, product's: #{product.quantity}, given: #{desired_quantity}" unless product.quantity.isCompatible(desired_quantity)
     @product = product
     @name = @product.name
-    @quantity = desired_quantity
+    @quantity = desired_quantity.as_qty()
 
   scale: () -> @quantity.div(@product.quantity)
 
@@ -198,7 +218,7 @@ class window.ProductInQuantity
     new ProductInQuantity(@product, "#{scale * @scale()}")
 
   in_quantity: (desired_quantity)->
-    new ProductInQuantity(@product, desired_quantity)
+    new ProductInQuantity(@product, desired_quantity.as_qty())
 
 class window.ProductSource
   constructor: (name, url, quantity_in_package, price)->
@@ -207,8 +227,8 @@ class window.ProductSource
     @quantity_in_package = quantity_in_package
     @price = price
 
-  as_ingredient: ()->
-    new IngredientElement("Price", @price)
+  as_ingredient: (elements)->
+    new IngredientElement(elements.Price, @price)
 
   toString: ()->
     "#{@name} #{@url} for #{@price.toString()} per #{@quantity_in_package.toString()} package"

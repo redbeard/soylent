@@ -37,10 +37,10 @@ window.cache_view_model_value = (root_model, self, cache_key, value_func)->
     cached.value
 
 class window.IngredientsTreeTableModel
-  constructor: (recommendation, recipe, column_order_and_preferences)->
+  constructor: ($elements, recommendation, recipe, column_order_and_preferences)->
     @recommendation = recommendation
     @recipe = recipe
-    @column_order_and_preferences = column_order_and_preferences
+    @elements = $elements
 
     @recommendation_node = new IngredientsTreeTableNode(this, null, @recommendation, 'no-quantity')
     @recipe_node = new IngredientsTreeTableNode(this, null, @recipe, 'no-quantity')
@@ -53,7 +53,6 @@ class window.IngredientsTreeTableModel
     @revision = @revision + 1
 
   add_product: (product_to_add)->
-    console.log product_to_add
     @recipe_node.add_child_ingredient( product_to_add.in_quantity( product_to_add.quantity ) )
     @refresh()
 
@@ -83,7 +82,7 @@ class window.IngredientsTreeTableModel
             else unless (recommended_for_element.quantity.scalar == 0.0)
               percent_difference_for_element = difference_for_element.quantity.div(recommended_for_element.quantity) 
 
-          percent_difference[element_name] = new IngredientElement(element_name, percent_difference_for_element.to("percent"))
+          percent_difference[element_name] = new IngredientElement(@elements[element_name], percent_difference_for_element.to("percent"))
 
       percent_difference
     )
@@ -122,12 +121,8 @@ class window.IngredientsTreeTableModel
 
     @_columns = [ operationsColumn, quantityColumn, nameColumn ];
 
-    for name, preferences of @column_order_and_preferences
+    for name, preferences of @elements
       @_columns.push new IngredientsTreeTableColumn(name, name, "element-column-cell", preferences)
-
-    for element_name, ingredient_element of @recipe.totals()
-      unless @column_order_and_preferences[element_name]
-        @_columns.push(new IngredientsTreeTableColumn(element_name, element_name, "element-column-cell", { column_class: 'unknown', preferred_unit: ingredient_element.quantity })) if ingredient_element.quantity
 
     @_columns
 

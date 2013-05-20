@@ -21,8 +21,11 @@ angular.module('Soylent', [ ]).
             $timeout( (() -> $element.trigger('input')), 0)
       })
   ).
-  factory('$products_repository', ['$http', ($http)->
-    new ProductsRepositoryService($http)
+  factory('$elements_repository', [ ()->
+    new ElementsRepositoryService()
+  ]).
+  factory('$products_repository', ['$http', '$elements_repository', ($http, $elements_repository)->
+    new ProductsRepositoryService($http, $elements_repository)
   ]).
   config [ '$routeProvider', '$httpProvider', ($routeProvider, $httpProvider) ->
       $routeProvider.
