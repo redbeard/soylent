@@ -176,7 +176,11 @@ class window.Product extends Ingredient
     super(name, serving_quantity.as_qty(), serving_contents)
     @elements = $elements
     @sources = sources
-    @serving_contents = [ @best_price().as_ingredient(@elements).mul( serving_quantity.as_qty() ) ].concat(@serving_contents)
+    #@serving_contents = [ @best_price().as_ingredient(@elements).mul( serving_quantity.as_qty() ) ].concat(@serving_contents)
+    @preferred_source = @best_price()
+
+  contents: ()->
+    [ @preferred_source.as_ingredient(@elements).mul( @quantity ) ].concat(@serving_contents)
 
   in_scale: (scale)->
     new ProductInQuantity(@product, "#{scale}")

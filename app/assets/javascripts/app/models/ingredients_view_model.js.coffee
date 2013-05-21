@@ -45,7 +45,7 @@ class window.IngredientsTreeTableModel
     @recommendation_node = new IngredientsTreeTableNode(this, null, @recommendation, 'no-quantity')
     @recipe_node = new IngredientsTreeTableNode(this, null, @recipe, 'no-quantity')
 
-    @show = { macro: true, major: true, minor: true, breakdown: false, ops: true, name: true, quantity: true, unknown: true }
+    @show = { ops: true, name: true, quantity: true, source: true, macro: true, major: true, minor: true, breakdown: false, unknown: true }
 
     @revision = 0
 
@@ -59,6 +59,8 @@ class window.IngredientsTreeTableModel
   template_for: (row, column)->
     if (row == @recommendation_node) && (column.preferences.column_class == 'macro')
       return "macronutrient-column-cell"
+    if ((row == @recommendation_node) or (row == @recipe_node)) and (column.preferences.column_class == 'source')
+      return "none"
     column.template
 
   rows: ()->
@@ -115,18 +117,19 @@ class window.IngredientsTreeTableModel
   columns: ()->
     return @_columns if @_columns
 
-    operationsColumn = new IngredientsTreeTableColumn("Operations", '', 'ops-column-cell', { column_class: 'ops' })
-    nameColumn = new IngredientsTreeTableColumn("Name", 'Name', 'name-column-cell',  { column_class: 'name' })
-    quantityColumn = new IngredientsTreeTableColumn("Quantity", 'Qty', 'quantity-column-cell',  { column_class: 'quantity' })
+    operations_column = new IngredientsTreeTable_column("Operations", '', 'ops-column-cell', { column_class: 'ops' })
+    name_column = new IngredientsTreeTable_column("Name", 'Name', 'name-column-cell',  { column_class: 'name' })
+    quantity_column = new IngredientsTreeTable_column("Quantity", 'Qty', 'quantity-column-cell',  { column_class: 'quantity' })
+    source_column = new IngredientsTreeTable_column("Source", 'Source', 'source-column-cell',  { column_class: 'source' })
 
-    @_columns = [ operationsColumn, quantityColumn, nameColumn ];
+    @_columns = [ operations_column, quantity_column, name_column, source_column ];
 
     for name, preferences of @elements
-      @_columns.push new IngredientsTreeTableColumn(name, name, "element-column-cell", preferences)
+      @_columns.push new IngredientsTreeTable_column(name, name, "element-column-cell", preferences)
 
     @_columns
 
-class window.IngredientsTreeTableColumn
+class window.IngredientsTreeTable_column
   constructor: (name, title, template, column_preferences)->
     @name = name
     @title = title
