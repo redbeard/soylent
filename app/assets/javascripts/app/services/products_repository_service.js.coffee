@@ -11,7 +11,14 @@ class window.ProductsRepositoryService
 
   loadDefaults: ()->
     @products.push new Product @elements, "Fine Powdered Oats", 
-      [ new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("1kg"), new Qty("9 AUD/kg")) ], 
+      [ 
+        new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("1kg"), new Qty("9 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (2kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("2kg"), new Qty("8.5 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (5kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("5kg"), new Qty("7.8 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (10kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("10kg"), new Qty("7.5 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (15kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("15kg"), new Qty("7.33 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (20kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("20kg"), new Qty("6.95 AUD/kg")),
+      ], 
       new Qty("100g"), [ 
         @elements.Energy.in_quantity("1608 kJ"), 
         @elements.Protein.in_quantity("12.1g"), 
@@ -116,8 +123,12 @@ class window.ProductsRepositoryService
         @elements.Serine.in_quantity("0.750 g"),
       ]
 
-    @products.push new Product @elements, "Whey Protein Isolate - Natural", 
-      [ new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("1kg"), new Qty("35 AUD/kg")) ], 
+    @products.push new Product @elements, "Whey Protein Isolate - Natural", [ 
+        new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("1kg"), new Qty("35 AUD/kg")), 
+        new ProductSource("BulkNutrients.com.au (2kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("2kg"), new Qty("29.5 AUD/kg")), 
+        new ProductSource("BulkNutrients.com.au (5kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("5kg"), new Qty("25.8 AUD/kg")), 
+        new ProductSource("BulkNutrients.com.au (10kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("5kg"), new Qty("24.9 AUD/kg")),
+      ], 
       new Qty("100g"), [
         @elements.Energy.in_quantity("1606 kJ"), 
         @elements.Protein.in_quantity("91.4g"), 
@@ -315,6 +326,7 @@ class window.ProductsRepositoryService
       [ 
         new ProductSource("iHerb.com (1lb package)", "http://au.iherb.com/now-foods-potassium-gluconate-100-pure-powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.1 AUD/lb")),
         new ProductSource("Amazin.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2", new Qty("1lb"), new Qty("14.47 USD/lb")),
+        new ProductSource("VitaminLife.com (1lb package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Gluconate-Powder-/product_id/52846", new Qty("1lb"), new Qty("12.34 USD/lb")),
       ], 
       new Qty("3.48g"), [ 
         @elements.Potassium.in_quantity("540mg"),
@@ -324,6 +336,7 @@ class window.ProductsRepositoryService
       [ 
         new ProductSource("iHerb.com (8oz package)", "http://www.iherb.com/Now-Foods-Potassium-Chloride-Powder-8-oz-227-g/777", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
         new ProductSource("Amazon.com (8oz package)", "http://www.amazon.com/Potassium-Chloride-Powder-From-Foods/dp/B009K6T7OA", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
+        new ProductSource("VitaminLife.com (8oz package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Chloride-Powder/product_id/14215", new Qty("8 oz"), new Qty("0.5675 USD/oz")),
       ], 
       new Qty("1.4g"), [ 
         @elements.Potassium.in_quantity("730mg"),
@@ -360,6 +373,7 @@ class window.ProductsRepositoryService
       [ 
         new ProductSource("Amazon.com (6.87oz package)", "http://www.amazon.com/Optimum-Nutrition-Fitness-Fiber-6-87/dp/B003VUHU0O", new Qty("6.87oz"), new Qty("1.15720524 USD/oz")),
         new ProductSource("au.Bodybuilding.com (195g package)", "http://au.bodybuilding.com/store/opt/fitness-fiber.html", new Qty("195g"), new Qty("0.029435897 AUD/g")),
+        new ProductSource("ProteinKing.com.au (195g package)", "http://www.proteinking.com.au/Bodybuilding-Supplements/Optimum-Fitness-Fiber", new Qty("195g"), new Qty("0.071538462 AUD/g")),
       ], 
       new Qty("6.5g"), [ 
         @elements.Energy.in_quantity("10 kcal"),
@@ -369,9 +383,9 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Fish Oil (Omega 3) EPA/DHA", 
       [ 
-        new ProductSource("PureBulk.com (8.45oz package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("8.45floz"), new Qty("2.071005917 USD/floz")),
-        new ProductSource("PureBulk.com (16.9oz package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("16.9floz"), new Qty("1.863905325 USD/floz")),
-        new ProductSource("PureBulk.com (33.8oz package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("33.8floz"), new Qty("1.686390533 USD/floz")),
+        new ProductSource("PureBulk.com (8.45oz package)", "http://purebulk.com/fish-oil-high-omega-3-liquid.html", new Qty("8.45floz"), new Qty("2.071005917 USD/floz")),
+        new ProductSource("PureBulk.com (16.9oz package)", "http://purebulk.com/fish-oil-high-omega-3-liquid.html", new Qty("16.9floz"), new Qty("1.863905325 USD/floz")),
+        new ProductSource("PureBulk.com (33.8oz package)", "http://purebulk.com/fish-oil-high-omega-3-liquid.html", new Qty("33.8floz"), new Qty("1.686390533 USD/floz")),
       ], 
       new Qty("5 ml"), [ 
         @elements.Energy.in_quantity("41 kcal"),
@@ -397,13 +411,14 @@ class window.ProductsRepositoryService
       ], 
       new Qty("2500mg"), [ @elements.Creatine.in_quantity("2500mg") ]
 
-    @products.push new Product @elements, "Swanson Premium Monosodium Phosphate", 
+    @products.push new Product @elements, "Monosodium Phosphate (NaH2PO)", 
       [ 
         new ProductSource("Swanson Vitamins (4oz package)", "http://www.swansonvitamins.com/swanson-premium-pure-monosodium-phosphate-4-oz-113-grams-pwdr", new Qty("4oz"), new Qty("0.9975 USD/oz")),
+        new ProductSource("eBay.com ChemistryConnection (1lb package)", "http://www.ebay.com/itm/Monosodium-Phosphate-1-Lb-/290399787079", new Qty("1lb"), new Qty("17.70 USD/lb")),
       ], 
       new Qty("1g"), [ 
-        @elements.Phosphorus.in_quantity("250mg"),
-        @elements.Sodium.in_quantity("190mg"),
+        @elements.Phosphorus.in_quantity("258mg"),
+        @elements.Sodium.in_quantity("192mg"),
       ]
 
     @products.push new Product @elements, "Methylsulfonylmethane (MSM)", 
@@ -412,6 +427,9 @@ class window.ProductsRepositoryService
         new ProductSource("PureBulk.com (500g package)", "http://purebulk.com/msm-methylsulfonylmethane-powder.html", new Qty("500g"), new Qty("32.5 USD/kg")),
         new ProductSource("PureBulk.com (1kg package)", "http://purebulk.com/msm-methylsulfonylmethane-powder.html", new Qty("1kg"), new Qty("29.25 USD/kg")),
         new ProductSource("PureBulk.com (1.5kg package)", "http://purebulk.com/msm-methylsulfonylmethane-powder.html", new Qty("1.5kg"), new Qty("27.83 USD/kg")),
+        new ProductSource("Mismo.com.au (1kg package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("1kg"), new Qty("45 AUD/kg")),
+        new ProductSource("Mismo.com.au (500g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("500g"), new Qty("52 AUD/kg")),
+        new ProductSource("Mismo.com.au (250g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("250g"), new Qty("60 AUD/kg")),
       ], 
       new Qty("1300mg"), [ 
         @elements.Sulfur.in_quantity("442mg"),
