@@ -1,5 +1,7 @@
 window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$elements_repository', ($scope, $http, $timeout, $products_repository, $elements) ->
 
+  $scope.days_for_shopping_list = 90
+
   $scope.products_repository = $products_repository
   $scope.elements = $elements
 

@@ -466,7 +466,8 @@ class window.ProductsRepositoryService
         new ProductSource("PureBulk.com (1kg package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("1kg"), new Qty("23 USD/kg")),
         new ProductSource("PureBulk.com (1.5kg package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("1.5kg"), new Qty("21.83 USD/kg")),
         new ProductSource("Mushashi.com.au (700g package)", "http://www.chemistwarehouse.com.au/product.asp?id=66063", new Qty("700g"), new Qty("61.4142 AUD/kg")),
-        new ProductSource("GNClivewell.com.au (500g package)", "http://purebulk.com/creatine-monohydrate-powder.html", new Qty("500g"), new Qty("81.9 AUD/kg")),
+        new ProductSource("GNClivewell.com.au Homebrand (500g package)", "http://www.gnclivewell.com.au/product.asp?id=81&t=Creatine+Monohydrate+500g&cid=25", new Qty("500g"), new Qty("81.9 AUD/kg")),
+        new ProductSource("GNClivewell.com.au Homebrand (1kg package)", "http://www.gnclivewell.com.au/product.asp?id=78&t=Creatine+Monohydrate+1kg&cid=25", new Qty("1kg"), new Qty("67.95 AUD/kg")),
       ],
       new Qty("2500mg"), [ @elements.Creatine.in_quantity("2500mg") ]
 

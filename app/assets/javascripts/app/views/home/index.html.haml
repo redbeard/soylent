@@ -18,7 +18,7 @@
                   %a{:href => "#/products"} Products
               %form.navbar-search.pull-right
                 %div.currency(ng-show="recipeTreeTableModel")
-                  %select.currency(ng-model="recipeTreeTableModel.column_order_and_preferences['Price'].preferred_unit")
+                  %select.currency(ng-model="recipeTreeTableModel.elements.Price.preferred_unit")
                     %option.usd(label='USD' value="USD")
                     %option.aud(label='AUD' value="AUD")
   .row-fluid
@@ -38,22 +38,40 @@
                   %button.btn.btn-mini(type='submit' id='add-product-button' ng-disabled='!product_ready_to_add()')
                     %span.icon-plus
 
-      .well
-        .pref
-          %input(type='checkbox' ng-model='recipeTreeTableModel.show["macro"]')
-            Show macronutrients
-        .pref
-          %input(type='checkbox' ng-model='recipeTreeTableModel.show["major"]')
-            Show major elements
-        .pref
-          %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
-            Show minor elements
-        .pref
-          %input(type='checkbox' ng-model='recipeTreeTableModel.show["unknown"]')
-            Show elements without recommendation
-        .pref
-          %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
-            Show breakdown
+      .row-fluid
+        .span6.well
+          .pref
+            %input(type='checkbox' ng-model='recipeTreeTableModel.show["macro"]')
+              Show macronutrients
+          .pref
+            %input(type='checkbox' ng-model='recipeTreeTableModel.show["major"]')
+              Show major elements
+          .pref
+            %input(type='checkbox' ng-model='recipeTreeTableModel.show["minor"]')
+              Show minor elements
+          .pref
+            %input(type='checkbox' ng-model='recipeTreeTableModel.show["unknown"]')
+              Show elements without recommendation
+          .pref
+            %input(type='checkbox' ng-model='recipeTreeTableModel.show["breakdown"]')
+              Show breakdown
+        .span6.well
+          %form#shopping-list
+            %label(for='#days-for-shopping-list')
+              Days for shopping list:
+            %input#days-for-shopping-list(ng-model="days_for_shopping_list" size="4" min="1" max="4")
+          %ul
+            %li(ng-repeat='product_in_quantity in recipe.contents()')
+              {{product_in_quantity.packages_for_period(days_for_shopping_list)}} packages
+              ({{product_in_quantity.packages_for_period_exact(days_for_shopping_list).toString(2)}})
+              of 
+              %a(href='{{product_in_quantity.product.preferred_source.url}}' rel="nofollow" title='{{product_in_quantity.product.preferred_source.name}}' target="_blank" description='' ng-show='product_in_quantity.product.preferred_source')
+                {{product_in_quantity.name}} from {{product_in_quantity.product.preferred_source.name}}
+              %span(ng-show='!product_in_quantity.product.preferred_source')
+                {{product_in_quantity.name}}
+          Total cost (without shipping):
+          {{recipeTreeTableModel.recipe_node.total_for('Price').quantity.mul(days_for_shopping_list).toString(recipeTreeTableModel.elements.Price.preferred_unit, 2)}}
+
   .row-fluid
     .footer.span12
       .copyright

@@ -216,7 +216,7 @@
     /* currency */
     "<dollar>":[["USD","dollar"], 1.0, "currency", ["<dollar>"]],
     "<cents>" :[["cents"], 0.01, "currency", ["<dollar>"]],
-    "<aud-dollar>":[["AUD"], 1.04, "currency", ["<dollar>"]],
+    "<aud-dollar>":[["AUD"], 0.96, "currency", ["<dollar>"]],
     "<aud-cents>" :[["AUD cents"], 0.01, "currency", ["<aud-dollar>"]],
 
     /* luminosity */

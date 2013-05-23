@@ -212,6 +212,15 @@ class window.ProductInQuantity
 
   best_price: ()-> @product.best_price()
 
+  quantity_for_period: (days)-> 
+    @quantity.mul(days)
+
+  packages_for_period_exact: (days)->
+    @quantity_for_period(days).div(@product.preferred_source.quantity_in_package)
+
+  packages_for_period: (days)->
+    Math.ceil(@packages_for_period_exact(days).scalar)
+
   toString: ()->
     "#{@quantity.toString()} (#{scale()}x) serving of #{@product.name}"
 
@@ -234,8 +243,11 @@ class window.ProductSource
   as_ingredient: (elements)->
     new IngredientElement(elements.Price, @price)
 
+  price_per_package: ()->
+    @price.mul(@quantity_in_package).toString(2)
+
   toString: ()->
-    "#{@name} for #{@price.toString()} per #{@quantity_in_package.toString()} package"
+    "#{@name} for #{@price.toString(2)} / #{@price_per_package().toString(2)} per package"
 
   in_scale: (scale)->
     new ProductSource(@name, @url, @price * scale)
