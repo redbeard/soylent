@@ -10,6 +10,21 @@ class window.ProductsRepositoryService
     #@products
 
   loadDefaults: ()->
+    @products.push new Product @elements, "Oat Bran (Australia)",
+      [
+        new ProductSource("woolworthsonline.com.au (Homebrand 500g package)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D203867%26name%3Dhomebrand-bran%26search%3Dbran", new Qty("500g"), new Qty("4.06 AUD/kg")),
+      ],
+      new Qty("100g"), [
+        @elements.Carbohydrates.in_quantity("46.3g"),
+        @elements.Energy.in_quantity("1500 kJ"),
+        @elements["Fats (saturated)"].in_quantity("1.7g"),
+        @elements.Fats.in_quantity("8.7g"),
+        @elements.Protein.in_quantity("17.1g"),
+        @elements.Sodium.in_quantity("31mg"),
+        @elements["Carbohydrates (sugars)"].in_quantity("1.6g"),
+        @elements.Fibre.in_quantity("18.6g"),
+      ]
+
     @products.push new Product @elements, "Fine Powdered Oats",
       [
         new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/fine-powdered-oats/FPO", new Qty("1kg"), new Qty("9 AUD/kg")),
@@ -156,6 +171,19 @@ class window.ProductsRepositoryService
           @elements.Proline.in_quantity("1088 mg"),
           @elements.Serine.in_quantity("1088 mg"),
           @elements.Tyrosine.in_quantity("1016 mg"),
+        ]
+      ]
+
+    @products.push new Product @elements, "L Leucine", [
+        new ProductSource("BulkNutrients.com.au (250g package)", "http://www.bulknutrients.com.au/buy/l-leucine/LLEUC", new Qty("250g"), new Qty("60 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/l-leucine/LLEUC", new Qty("1kg"), new Qty("39 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (4kg package)", "http://www.bulknutrients.com.au/buy/l-leucine/LLEUC", new Qty("4kg"), new Qty("34.75 AUD/kg")),
+      ],
+      new Qty("100g"), [
+        @elements.Energy.in_quantity("1700 kJ"),
+        @elements.Protein.in_quantity("100g"),
+        new Ingredient "Amino Acid Profile", new Qty("100g"), [
+          @elements.Leucine.in_quantity("100g"),
         ]
       ]
 
@@ -372,13 +400,34 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "Optimum Nutrition Fitness Fiber",
       [
         new ProductSource("Amazon.com (6.87oz package)", "http://www.amazon.com/Optimum-Nutrition-Fitness-Fiber-6-87/dp/B003VUHU0O", new Qty("6.87oz"), new Qty("1.15720524 USD/oz")),
-        new ProductSource("au.Bodybuilding.com (195g package)", "http://au.bodybuilding.com/store/opt/fitness-fiber.html", new Qty("195g"), new Qty("0.029435897 AUD/g")),
+        new ProductSource("Bodybuilding.com (195g package)", "http://au.bodybuilding.com/store/opt/fitness-fiber.html", new Qty("195g"), new Qty("0.029435897 AUD/g")),
         new ProductSource("ProteinKing.com.au (195g package)", "http://www.proteinking.com.au/Bodybuilding-Supplements/Optimum-Fitness-Fiber", new Qty("195g"), new Qty("0.071538462 AUD/g")),
       ],
       new Qty("6.5g"), [
         @elements.Energy.in_quantity("10 kcal"),
         @elements.Carbohydrates.in_quantity("6g"),
         @elements.Fibre.in_quantity("5g"),
+      ]
+
+    @products.push new Product @elements, "Myogenix Pro Fiber",
+      [
+        new ProductSource("Vitamin Grocer (AU) (500g package)", "http://www.vitamingrocer.com.au/Pro-Fiber-plus-Enzymes-Digestive-Support-p/143237.htm", new Qty("500g"), new Qty("93.56 AUD/kg")),
+        new ProductSource("BodyBuilding.com (500g package)", "http://au.bodybuilding.com/store/myo/profiber.html", new Qty("500g"), new Qty("54.02 AUD/kg")),
+      ],
+      new Qty("10g"), [
+        @elements.Energy.in_quantity("20 kcal"),
+        @elements.Carbohydrates.in_quantity("9g"),
+        @elements.Fibre.in_quantity("9g"),
+      ]
+
+    @products.push new Product @elements, "Natures First Fibre Cleanse Shaker",
+      [
+        new ProductSource("Aussie Health Products (AU) (285g package)", "http://www.aussiehealthproducts.com.au/digestion-gut-health.php?id=411650&Natures-First-Fibre-Cleanse-Shaker-285g", new Qty("285g"), new Qty("28.245614035 AUD/kg")),
+      ],
+      new Qty("10g"), [
+        @elements.Energy.in_quantity("20 kcal"),
+        @elements.Carbohydrates.in_quantity("9g"),
+        @elements.Fibre.in_quantity("9g"),
       ]
 
     @products.push new Product @elements, "Fish Oil (Omega 3) EPA/DHA",
@@ -422,8 +471,8 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Monosodium Phosphate (NaH2PO)",
       [
-        new ProductSource("MSP (Pure Monosodium Phosphate) (3 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&products_id=1167", new Qty("4oz"), new Qty("8.4783 USD/oz")),
-        new ProductSource("MSP (Pure Monosodium Phosphate) (6 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&cPath=21_179&products_id=667", new Qty("4oz"), new Qty("6.1558 USD/oz")),
+        new ProductSource("Green Harmony Living - MSP (3 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&products_id=1167", new Qty("4oz"), new Qty("8.4783 USD/oz")),
+        new ProductSource("Green Harmony Living - MSP (6 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&cPath=21_179&products_id=667", new Qty("4oz"), new Qty("6.1558 USD/oz")),
         new ProductSource("Swanson Vitamins (4oz package)", "http://www.swansonvitamins.com/swanson-premium-pure-monosodium-phosphate-4-oz-113-grams-pwdr", new Qty("4oz"), new Qty("0.9975 USD/oz")),
         new ProductSource("eBay.com ChemistryConnection (1lb package)", "http://www.ebay.com/itm/Monosodium-Phosphate-1-Lb-/290399787079", new Qty("1lb"), new Qty("17.70 USD/lb")),
       ],
@@ -492,7 +541,7 @@ class window.ProductsRepositoryService
       [
         new ProductSource("a1supplements.com (180 tablets)", "http://www.a1supplements.com/Opti-Men-180-Tablets-p-2504.html", new Qty("180 count"), new Qty(".133055556 USD/each")),
         new ProductSource("mydailyvita.com (180 tablets)", "http://mydailyvita.com/a/index.php?main_page=product_info&cPath=59&products_id=884", new Qty("180 count"), new Qty(".294166667 AUD/each")),
-        new ProductSource("supplementsdirect.com.au (180 tablets)", "http://www.supplementsdirect.com.au/optimum-nutrition-opti-men-180-tablets/?utm_source=myshopping&utm_medium=cpc&utm_campaign=Vitamins+and+Nutrition&utm_term=Optimum+Nutrition+Opti+Men+180+Tablets", new Qty("180 count"), new Qty(".333055556 AUD/each")),
+        new ProductSource("supplementsdirect.com.au (180 tablets)", "http://www.supplementsdirect.com.au/optimum-nutrition-opti-men-180-tablets/?utm_source=myshopping&utm_medium=cpc&utm_campaign=Vitamins+and+Nutrition&utm_term=Optimum+Nutrition+Opti+Men+180+Tablets", new Qty("180 count"), new Qty("0.333055556 AUD/each")),
       ],
       new Qty("3 count"), [
         @elements["Vitamin A"].in_quantity("10000 IU"),

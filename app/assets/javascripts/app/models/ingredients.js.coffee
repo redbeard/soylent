@@ -235,7 +235,7 @@ class window.ProductSource
     new IngredientElement(elements.Price, @price)
 
   toString: ()->
-    "#{@name} #{@url} for #{@price.toString()} per #{@quantity_in_package.toString()} package"
+    "#{@name} for #{@price.toString()} per #{@quantity_in_package.toString()} package"
 
   in_scale: (scale)->
     new ProductSource(@name, @url, @price * scale)
