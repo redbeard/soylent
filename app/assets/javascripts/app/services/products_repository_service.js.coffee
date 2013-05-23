@@ -420,9 +420,10 @@ class window.ProductsRepositoryService
         @elements.Fibre.in_quantity("9g"),
       ]
 
-    @products.push new Product @elements, "Natures First Fibre Cleanse Shaker",
+    @products.push new Product @elements, "Natures First Fibre Cleanse",
       [
         new ProductSource("Aussie Health Products (AU) (285g package)", "http://www.aussiehealthproducts.com.au/digestion-gut-health.php?id=411650&Natures-First-Fibre-Cleanse-Shaker-285g", new Qty("285g"), new Qty("28.245614035 AUD/kg")),
+        new ProductSource("Aussie Health Products (AU) (400g package)", "http://www.aussiehealthproducts.com.au/cereals.php?id=7003243&Natures-First-Fibre-Cleanse-400g", new Qty("400g"), new Qty("23 AUD/kg")),
       ],
       new Qty("10g"), [
         @elements.Energy.in_quantity("20 kcal"),
