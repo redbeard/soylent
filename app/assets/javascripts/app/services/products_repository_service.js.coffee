@@ -258,7 +258,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "Hain Pure Foods Sea Salt Iodized",
       [
         new ProductSource("Amazon.com (26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK?tag=soylent-mk-20", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
-        new ProductSource("iHerb.com (26 oz package)", "http://au.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+        new ProductSource("iHerb.com (26 oz package)", "http://iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
       ],
       new Qty("1.5 g"), [
         @elements.Sodium.in_quantity("590mg"),
@@ -271,7 +271,7 @@ class window.ProductsRepositoryService
         new ProductSource("Woolworths Online (Homebrand 500g package)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D204373%26name%3Dhomebrand-iodised-salt-drum%26search%3Diodized", new Qty("500g"), new Qty("1.92 AUD/kg")),
         new ProductSource("Woolworths Online (SAXA Cooking Salt Iodized 1kg package)", "http://www2.woolworthsonline.com.au/Shop/ProductDetails?Stockcode=306494&name=saxa-salt-cooking-iodised&search=iodized", new Qty("1kg"), new Qty("1.8 AUD/kg")),
         new ProductSource("Amazon.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK?tag=soylent-mk-20", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
-        new ProductSource("iHerb.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://au.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+        new ProductSource("iHerb.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://www.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293?f=JNB001", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
       ],
       new Qty("1.5 g"), [
         @elements.Sodium.in_quantity("590mg"),
@@ -284,7 +284,7 @@ class window.ProductsRepositoryService
         new ProductSource("Amazon.com (100 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("100 count"), new Qty(".0811 USD/each")),
         new ProductSource("Amazon.com (120 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("120 count"), new Qty(".05025 USD/each")),
         new ProductSource("Amazon.com (240 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("240 count"), new Qty(".06492 USD/each")),
-        new ProductSource("iHerb.com (240 capsules)", "http://www.iherb.com/Now-Foods-Calcium-Magnesium-240-Softgels/461", new Qty("240 count"), new Qty(".06366 USD/each")),
+        new ProductSource("iHerb.com (240 capsules)", "http://www.iherb.com/Now-Foods-Calcium-Magnesium-240-Softgels/461?f=JNB001", new Qty("240 count"), new Qty(".06366 USD/each")),
         new ProductSource("Amazon.com (250 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("250 count"), new Qty(".05192 USD/each")),
       ],
       new Qty("1 count"), [
@@ -324,7 +324,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "NOW Foods Choline & Inositol 500mg 100 Capsules",
       [
         new ProductSource("Amazon.com (100 capsules)", "http://www.amazon.com/Choline-Inositol-500mg-100-Capsules/dp/B000JN4GBC?tag=soylent-mk-20", new Qty("100 count"), new Qty(".0638 USD/each")),
-        new ProductSource("iHerb.com (100 capsules)", "http://www.iherb.com/Now-Foods-Choline-Inositol-500-mg-100-Capsules/513", new Qty("100 count"), new Qty(".0827 USD/each")),
+        new ProductSource("iHerb.com (100 capsules)", "http://www.iherb.com/Now-Foods-Choline-Inositol-500-mg-100-Capsules/513?f=JNB001", new Qty("100 count"), new Qty(".0827 USD/each")),
       ],
       new Qty("1 count"), [
         @elements.Choline.in_quantity("250mg"),
@@ -352,7 +352,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "NOW Foods Potassium Gluconate Powder",
       [
-        new ProductSource("iHerb.com (1lb package)", "http://au.iherb.com/now-foods-potassium-gluconate-100-pure-powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.1 AUD/lb")),
+        new ProductSource("iHerb.com (1lb package)", "http://www.iherb.com/now-foods-potassium-gluconate-100-pure-powder-1-lb-454-g/13939?f=JNB001", new Qty("1lb"), new Qty("12.1 AUD/lb")),
         new ProductSource("Amazin.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2?tag=soylent-mk-20", new Qty("1lb"), new Qty("14.47 USD/lb")),
         new ProductSource("VitaminLife.com (1lb package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Gluconate-Powder-/product_id/52846", new Qty("1lb"), new Qty("12.34 USD/lb")),
       ],
@@ -362,7 +362,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "NOW Foods Potassium Chloride Powder",
       [
-        new ProductSource("iHerb.com (8oz package)", "http://www.iherb.com/Now-Foods-Potassium-Chloride-Powder-8-oz-227-g/777", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
+        new ProductSource("iHerb.com (8oz package)", "http://www.iherb.com/Now-Foods-Potassium-Chloride-Powder-8-oz-227-g/777?f=JNB001", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
         new ProductSource("Amazon.com (8oz package)", "http://www.amazon.com/Potassium-Chloride-Powder-From-Foods/dp/B009K6T7OA?tag=soylent-mk-20", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
         new ProductSource("VitaminLife.com (8oz package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Chloride-Powder/product_id/14215", new Qty("8 oz"), new Qty("0.5675 USD/oz")),
       ],
@@ -374,7 +374,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "NOW Foods Iron 18mg",
       [
         new ProductSource("Amazon.com (120 caps package)", "http://www.amazon.com/dp/B000WQDD2O?tag=soylent-mk-20", new Qty("120 count"), new Qty("0.064833333 USD/each")),
-        new ProductSource("iHerb.com (120 caps package)", "http://www.iherb.com/Now-Foods-Iron-18-mg-120-Veggie-Caps/10481", new Qty("120 count"), new Qty("0.058333333 USD/each")),
+        new ProductSource("iHerb.com (120 caps package)", "http://www.iherb.com/Now-Foods-Iron-18-mg-120-Veggie-Caps/10481?f=JNB001", new Qty("120 count"), new Qty("0.058333333 USD/each")),
       ],
       new Qty("1 count"), [
         @elements.Iron.in_quantity("18mg"),
@@ -390,7 +390,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Potassium Gluconate",
       [
-        new ProductSource("iHerb.com (1lb package)", "http://www.iherb.com/Now-Foods-Potassium-Gluconate-100-Pure-Powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.10 USD/lb")),
+        new ProductSource("iHerb.com (1lb package)", "http://www.iherb.com/Now-Foods-Potassium-Gluconate-100-Pure-Powder-1-lb-454-g/13939?f=JNB001", new Qty("1lb"), new Qty("12.10 USD/lb")),
         new ProductSource("Amazon.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2?tag=soylent-mk-20", new Qty("1lb"), new Qty("9.48 USD/lb")),
       ],
       new Qty("3.48g"), [
@@ -504,7 +504,7 @@ class window.ProductsRepositoryService
         new ProductSource("Mismo.com.au (1kg package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("1kg"), new Qty("45 AUD/kg")),
         new ProductSource("Mismo.com.au (500g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("500g"), new Qty("52 AUD/kg")),
         new ProductSource("Mismo.com.au (250g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("250g"), new Qty("60 AUD/kg")),
-        new ProductSource("iHerb.com (Solgar, MSM Powder, 8oz package)", "http://www.iherb.com/Solgar-MSM-Powder-8-oz-226-g/15230", new Qty("8oz"), new Qty("1.2975 USD/oz")),
+        new ProductSource("iHerb.com (Solgar, MSM Powder, 8oz package)", "http://www.iherb.com/Solgar-MSM-Powder-8-oz-226-g/15230?f=JNB001", new Qty("8oz"), new Qty("1.2975 USD/oz")),
       ],
       new Qty("1300mg"), [
         @elements.Sulfur.in_quantity("442mg"),
