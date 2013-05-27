@@ -243,7 +243,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Bertolli Extra Light Olive Oil",
       [
-        new ProductSource("Amazon.com (51 ounce bottle)", "http://www.amazon.com/Bertolli-Extra-Tasting-51-Ounce-Bottle/dp/B000WHR2MU", new Qty("51 floz"), new Qty("0.35 USD/floz")),
+        new ProductSource("Amazon.com (51 ounce bottle)", "http://www.amazon.com/Bertolli-Extra-Tasting-51-Ounce-Bottle/dp/B000WHR2MU?tag=soylent-mk-20", new Qty("51 floz"), new Qty("0.35 USD/floz")),
         new ProductSource("doorbuster.com.au (2 x 2L bottles)", "http://www.doorbuster.com.au/bertolli-2l-olive-oil-extra-light.html", new Qty("4 litres"), new Qty("9 AUD/litre")),
         new ProductSource("Woolworths Online (1l bottle)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D12339%26name%3Dbertolli-extra-virgin-olive-oil%26search%3Dextra%2Bvirgin%2Boil%2Bolive", new Qty("1 litres"), new Qty("8 AUD/litre")),
       ],
@@ -257,7 +257,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Hain Pure Foods Sea Salt Iodized",
       [
-        new ProductSource("Amazon.com (26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+        new ProductSource("Amazon.com (26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK?tag=soylent-mk-20", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
         new ProductSource("iHerb.com (26 oz package)", "http://au.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
       ],
       new Qty("1.5 g"), [
@@ -270,7 +270,7 @@ class window.ProductsRepositoryService
       [
         new ProductSource("Woolworths Online (Homebrand 500g package)", "http://www2.woolworthsonline.com.au/#url=/Shop/ProductDetails%3FStockcode%3D204373%26name%3Dhomebrand-iodised-salt-drum%26search%3Diodized", new Qty("500g"), new Qty("1.92 AUD/kg")),
         new ProductSource("Woolworths Online (SAXA Cooking Salt Iodized 1kg package)", "http://www2.woolworthsonline.com.au/Shop/ProductDetails?Stockcode=306494&name=saxa-salt-cooking-iodised&search=iodized", new Qty("1kg"), new Qty("1.8 AUD/kg")),
-        new ProductSource("Amazon.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
+        new ProductSource("Amazon.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://www.amazon.com/gp/customer-media/product-gallery/B000MDACSK?tag=soylent-mk-20", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
         new ProductSource("iHerb.com (Hain Pure Foods Sea Salt Iodized 26 oz package)", "http://au.iherb.com/Hain-Pure-Foods-Iodized-Sea-Salt-26-oz-737-g/33293", new Qty("26 oz"), new Qty("0.075769231 USD/oz")),
       ],
       new Qty("1.5 g"), [
@@ -281,11 +281,11 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "NOW Foods Calcium/magnesium 1000/500 mg",
       [
-        new ProductSource("Amazon.com (100 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A", new Qty("100 count"), new Qty(".0811 USD/each")),
-        new ProductSource("Amazon.com (120 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A", new Qty("120 count"), new Qty(".05025 USD/each")),
-        new ProductSource("Amazon.com (240 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A", new Qty("240 count"), new Qty(".06492 USD/each")),
+        new ProductSource("Amazon.com (100 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("100 count"), new Qty(".0811 USD/each")),
+        new ProductSource("Amazon.com (120 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("120 count"), new Qty(".05025 USD/each")),
+        new ProductSource("Amazon.com (240 capsules)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("240 count"), new Qty(".06492 USD/each")),
         new ProductSource("iHerb.com (240 capsules)", "http://www.iherb.com/Now-Foods-Calcium-Magnesium-240-Softgels/461", new Qty("240 count"), new Qty(".06366 USD/each")),
-        new ProductSource("Amazon.com (250 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A", new Qty("250 count"), new Qty(".05192 USD/each")),
+        new ProductSource("Amazon.com (250 tablets)", "http://www.amazon.com/Now-Foods-Calcium-Magnesium-Tablets/dp/B00028LZ9A?tag=soylent-mk-20", new Qty("250 count"), new Qty(".05192 USD/each")),
       ],
       new Qty("1 count"), [
         @elements.Calcium.in_quantity("1000mg"),
@@ -323,7 +323,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "NOW Foods Choline & Inositol 500mg 100 Capsules",
       [
-        new ProductSource("Amazon.com (100 capsules)", "http://www.amazon.com/Choline-Inositol-500mg-100-Capsules/dp/B000JN4GBC", new Qty("100 count"), new Qty(".0638 USD/each")),
+        new ProductSource("Amazon.com (100 capsules)", "http://www.amazon.com/Choline-Inositol-500mg-100-Capsules/dp/B000JN4GBC?tag=soylent-mk-20", new Qty("100 count"), new Qty(".0638 USD/each")),
         new ProductSource("iHerb.com (100 capsules)", "http://www.iherb.com/Now-Foods-Choline-Inositol-500-mg-100-Capsules/513", new Qty("100 count"), new Qty(".0827 USD/each")),
       ],
       new Qty("1 count"), [
@@ -353,7 +353,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "NOW Foods Potassium Gluconate Powder",
       [
         new ProductSource("iHerb.com (1lb package)", "http://au.iherb.com/now-foods-potassium-gluconate-100-pure-powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.1 AUD/lb")),
-        new ProductSource("Amazin.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2", new Qty("1lb"), new Qty("14.47 USD/lb")),
+        new ProductSource("Amazin.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2?tag=soylent-mk-20", new Qty("1lb"), new Qty("14.47 USD/lb")),
         new ProductSource("VitaminLife.com (1lb package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Gluconate-Powder-/product_id/52846", new Qty("1lb"), new Qty("12.34 USD/lb")),
       ],
       new Qty("3.48g"), [
@@ -363,7 +363,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "NOW Foods Potassium Chloride Powder",
       [
         new ProductSource("iHerb.com (8oz package)", "http://www.iherb.com/Now-Foods-Potassium-Chloride-Powder-8-oz-227-g/777", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
-        new ProductSource("Amazon.com (8oz package)", "http://www.amazon.com/Potassium-Chloride-Powder-From-Foods/dp/B009K6T7OA", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
+        new ProductSource("Amazon.com (8oz package)", "http://www.amazon.com/Potassium-Chloride-Powder-From-Foods/dp/B009K6T7OA?tag=soylent-mk-20", new Qty("8 oz"), new Qty("0.55625 USD/oz")),
         new ProductSource("VitaminLife.com (8oz package)", "http://www.vitaminlife.com/product-exec/PNAME/Potassium-Chloride-Powder/product_id/14215", new Qty("8 oz"), new Qty("0.5675 USD/oz")),
       ],
       new Qty("1.4g"), [
@@ -373,7 +373,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "NOW Foods Iron 18mg",
       [
-        new ProductSource("Amazon.com (120 caps package)", "http://www.amazon.com/dp/B000WQDD2O", new Qty("120 count"), new Qty("0.064833333 USD/each")),
+        new ProductSource("Amazon.com (120 caps package)", "http://www.amazon.com/dp/B000WQDD2O?tag=soylent-mk-20", new Qty("120 count"), new Qty("0.064833333 USD/each")),
         new ProductSource("iHerb.com (120 caps package)", "http://www.iherb.com/Now-Foods-Iron-18-mg-120-Veggie-Caps/10481", new Qty("120 count"), new Qty("0.058333333 USD/each")),
       ],
       new Qty("1 count"), [
@@ -391,7 +391,7 @@ class window.ProductsRepositoryService
     @products.push new Product @elements, "Potassium Gluconate",
       [
         new ProductSource("iHerb.com (1lb package)", "http://www.iherb.com/Now-Foods-Potassium-Gluconate-100-Pure-Powder-1-lb-454-g/13939", new Qty("1lb"), new Qty("12.10 USD/lb")),
-        new ProductSource("Amazon.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2", new Qty("1lb"), new Qty("9.48 USD/lb")),
+        new ProductSource("Amazon.com (1lb package)", "http://www.amazon.com/Now-Foods-Potassium-Gluconate-1-pound/dp/B0015C2ZI2?tag=soylent-mk-20", new Qty("1lb"), new Qty("9.48 USD/lb")),
       ],
       new Qty("3.48g"), [
         @elements.Potassium.in_quantity("540mg"),
@@ -399,7 +399,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Optimum Nutrition Fitness Fiber",
       [
-        new ProductSource("Amazon.com (6.87oz package)", "http://www.amazon.com/Optimum-Nutrition-Fitness-Fiber-6-87/dp/B003VUHU0O", new Qty("6.87oz"), new Qty("1.15720524 USD/oz")),
+        new ProductSource("Amazon.com (6.87oz package)", "http://www.amazon.com/Optimum-Nutrition-Fitness-Fiber-6-87/dp/B003VUHU0O?tag=soylent-mk-20", new Qty("6.87oz"), new Qty("1.15720524 USD/oz")),
         new ProductSource("Bodybuilding.com (195g package)", "http://au.bodybuilding.com/store/opt/fitness-fiber.html", new Qty("195g"), new Qty("0.029435897 AUD/g")),
         new ProductSource("ProteinKing.com.au (195g package)", "http://www.proteinking.com.au/Bodybuilding-Supplements/Optimum-Fitness-Fiber", new Qty("195g"), new Qty("0.071538462 AUD/g")),
       ],
@@ -513,7 +513,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Nature's Way Alive! Men's Multi Max Potency",
       [
-        new ProductSource("Amazon.com (90 tablets)", "http://www.amazon.com/Alive-Mens-Potency-Multivitamin-tablets/dp/B003B3OOO6", new Qty("90 count"), new Qty(".145222222 USD/count")),
+        new ProductSource("Amazon.com (90 tablets)", "http://www.amazon.com/Alive-Mens-Potency-Multivitamin-tablets/dp/B003B3OOO6?tag=soylent-mk-20", new Qty("90 count"), new Qty(".145222222 USD/count")),
       ],
       new Qty("3 count"), [
         @elements.Energy.in_quantity("5 kcal"),
@@ -602,7 +602,7 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Nature's Way Alive! Once Daily Multi-Vitamin",
       [
-        new ProductSource("Amazon.com (60 tablets)", "http://www.amazon.com/Natures-Way-Alive-Daily-Multi-Vitamin/dp/B003UEFUA8", new Qty("60 count"), new Qty(".216 USD/count")),
+        new ProductSource("Amazon.com (60 tablets)", "http://www.amazon.com/Natures-Way-Alive-Daily-Multi-Vitamin/dp/B003UEFUA8?tag=soylent-mk-20", new Qty("60 count"), new Qty(".216 USD/count")),
       ],
       new Qty("1 count"), [
         @elements["Vitamin A"].in_quantity("10000 IU"),
