@@ -142,7 +142,7 @@ class window.ProductsRepositoryService
         new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("1kg"), new Qty("35 AUD/kg")),
         new ProductSource("BulkNutrients.com.au (2kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("2kg"), new Qty("29.5 AUD/kg")),
         new ProductSource("BulkNutrients.com.au (5kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("5kg"), new Qty("25.8 AUD/kg")),
-        new ProductSource("BulkNutrients.com.au (10kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("5kg"), new Qty("24.9 AUD/kg")),
+        new ProductSource("BulkNutrients.com.au (10kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("10kg"), new Qty("24.9 AUD/kg")),
       ],
       new Qty("100g"), [
         @elements.Energy.in_quantity("1606 kJ"),
@@ -422,8 +422,8 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Natures First Fibre Cleanse",
       [
-        new ProductSource("Aussie Health Products (AU) (285g package)", "http://www.aussiehealthproducts.com.au/digestion-gut-health.php?id=411650&Natures-First-Fibre-Cleanse-Shaker-285g", new Qty("285g"), new Qty("28.245614035 AUD/kg")),
-        new ProductSource("Aussie Health Products (AU) (400g package)", "http://www.aussiehealthproducts.com.au/cereals.php?id=7003243&Natures-First-Fibre-Cleanse-400g", new Qty("400g"), new Qty("23 AUD/kg")),
+        new ProductSource("Aussie Health Products (285g package)", "http://www.aussiehealthproducts.com.au/digestion-gut-health.php?id=411650&Natures-First-Fibre-Cleanse-Shaker-285g", new Qty("285g"), new Qty("28.245614035 AUD/kg")),
+        new ProductSource("Aussie Health Products (400g package)", "http://www.aussiehealthproducts.com.au/cereals.php?id=7003243&Natures-First-Fibre-Cleanse-400g", new Qty("400g"), new Qty("23 AUD/kg")),
       ],
       new Qty("10g"), [
         @elements.Energy.in_quantity("20 kcal"),
@@ -443,6 +443,18 @@ class window.ProductsRepositoryService
         @elements["Omega-3 Fatty Acids"].in_quantity("1206mg"),
         @elements["Eicosapentaenoic acid"].in_quantity("617mg"),
         @elements["Docosahexaenoic acid"].in_quantity("351mg"),
+      ]
+
+    @products.push new Product @elements, "Healthy Essentials High Strength Ultra Pure Odorless Fish Oil",
+      [
+        new ProductSource("Aussie Health Products (200ml package)", "https://www.aussiehealthproducts.com.au/nutritional-oils.php?id=39304&Healthy-Essentials-Hi-Strength-Liq-Fish-Oil-200ml", new Qty("200ml"), new Qty("0.23425 AUD/ml")),
+      ],
+      new Qty("5.5 ml"), [
+        @elements.Energy.in_quantity("41 kcal"),
+        @elements.Fats.in_quantity("4.5g"),
+        @elements["Omega-3 Fatty Acids"].in_quantity("2.8g"),
+        @elements["Eicosapentaenoic acid"].in_quantity("1.7g"),
+        @elements["Docosahexaenoic acid"].in_quantity("1.1g"),
       ]
 
     @products.push new Product @elements, "Biotin 1% (Vitamin B7) Powder",
@@ -473,8 +485,8 @@ class window.ProductsRepositoryService
 
     @products.push new Product @elements, "Monosodium Phosphate (NaH2PO)",
       [
-        new ProductSource("Green Harmony Living - MSP (3 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&products_id=1167", new Qty("4oz"), new Qty("8.4783 USD/oz")),
-        new ProductSource("Green Harmony Living - MSP (6 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&cPath=21_179&products_id=667", new Qty("4oz"), new Qty("6.1558 USD/oz")),
+        new ProductSource("Green Harmony Living - MSP (3 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&products_id=1167", new Qty("12oz"), new Qty("8.4783 USD/oz")),
+        new ProductSource("Green Harmony Living - MSP (6 x 4 oz jars)", "http://www.greenharmonyliving.com/store/index.php?main_page=product_info&cPath=21_179&products_id=667", new Qty("24oz"), new Qty("4.36625 USD/oz")),
         new ProductSource("Swanson Vitamins (4oz package)", "http://www.swansonvitamins.com/swanson-premium-pure-monosodium-phosphate-4-oz-113-grams-pwdr", new Qty("4oz"), new Qty("0.9975 USD/oz")),
         new ProductSource("eBay.com ChemistryConnection (1lb package)", "http://www.ebay.com/itm/Monosodium-Phosphate-1-Lb-/290399787079", new Qty("1lb"), new Qty("17.70 USD/lb")),
       ],
@@ -492,6 +504,7 @@ class window.ProductsRepositoryService
         new ProductSource("Mismo.com.au (1kg package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("1kg"), new Qty("45 AUD/kg")),
         new ProductSource("Mismo.com.au (500g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("500g"), new Qty("52 AUD/kg")),
         new ProductSource("Mismo.com.au (250g package)", "http://www.mismo.com.au/mismo-products/msm-powder", new Qty("250g"), new Qty("60 AUD/kg")),
+        new ProductSource("iHerb.com (Solgar, MSM Powder, 8oz package)", "http://www.iherb.com/Solgar-MSM-Powder-8-oz-226-g/15230", new Qty("8oz"), new Qty("1.2975 USD/oz")),
       ],
       new Qty("1300mg"), [
         @elements.Sulfur.in_quantity("442mg"),
@@ -544,6 +557,8 @@ class window.ProductsRepositoryService
         new ProductSource("a1supplements.com (180 tablets)", "http://www.a1supplements.com/Opti-Men-180-Tablets-p-2504.html", new Qty("180 count"), new Qty(".133055556 USD/each")),
         new ProductSource("mydailyvita.com (180 tablets)", "http://mydailyvita.com/a/index.php?main_page=product_info&cPath=59&products_id=884", new Qty("180 count"), new Qty(".294166667 AUD/each")),
         new ProductSource("supplementsdirect.com.au (180 tablets)", "http://www.supplementsdirect.com.au/optimum-nutrition-opti-men-180-tablets/?utm_source=myshopping&utm_medium=cpc&utm_campaign=Vitamins+and+Nutrition&utm_term=Optimum+Nutrition+Opti+Men+180+Tablets", new Qty("180 count"), new Qty("0.333055556 AUD/each")),
+        new ProductSource("VitaminGrocer.com.au (180 tablets)", "http://www.vitamingrocer.com.au/Opti-Men-Mens-Multiple-p/106428.htm", new Qty("180 count"), new Qty("0.243333333 AUD/each")),
+        new ProductSource("eBay.com.au (live.long.live.strong 180 tablets)", "http://compare.ebay.com.au/like/221231645790?ltyp=AllFixedPriceItemTypes", new Qty("180 count"), new Qty("0.183055556 AUD/each")),
       ],
       new Qty("3 count"), [
         @elements["Vitamin A"].in_quantity("10000 IU"),

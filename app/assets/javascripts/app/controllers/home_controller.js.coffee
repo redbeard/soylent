@@ -84,7 +84,8 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
 #    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
 #    $products_repository.findBySubstring("Oat Bran")[0].in_quantity( new Qty("45.0g") ), 
     $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("90.0g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("290g") ),
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("285g") ),
+    $products_repository.findBySubstring("Leucine")[0].in_quantity( new Qty("5g") ),
     $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("39 g") ),
 #    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),
 #    $products_repository.findBySubstring("Biotin")[0].in_quantity( new Qty("23 mg") ),
@@ -103,7 +104,7 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
     $products_repository.findBySubstring("Inositol")[0].in_quantity( new Qty("2 count") ),
     $products_repository.findBySubstring("Creatine")[0].in_quantity( new Qty("5g") ),
     $products_repository.findBySubstring("MSM")[0].in_quantity( new Qty("6g") ),
-    $products_repository.findBySubstring("Fish Oil")[0].in_quantity( new Qty("3.1ml") ),
+    $products_repository.findBySubstring("Healthy Essentials High Strength")[0].in_quantity( new Qty("1.5ml") ),
     $products_repository.findBySubstring("Monosodium Phosphate")[0].in_quantity( new Qty("4g") ),
   ]
 

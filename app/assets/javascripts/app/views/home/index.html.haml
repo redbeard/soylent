@@ -62,7 +62,8 @@
             %input#days-for-shopping-list(ng-model="days_for_shopping_list" size="4" min="1" max="4")
           %ul
             %li(ng-repeat='product_in_quantity in recipe.contents()')
-              {{product_in_quantity.packages_for_period(days_for_shopping_list)}} packages
+              {{product_in_quantity.quantity_for_period(days_for_shopping_list).toString()}} in total = 
+              {{product_in_quantity.packages_for_period(days_for_shopping_list)}} x {{product_in_quantity.product.preferred_source.quantity_in_package.toString()}} packages
               ({{product_in_quantity.packages_for_period_exact(days_for_shopping_list).toString(2)}})
               of 
               %a(href='{{product_in_quantity.product.preferred_source.url}}' rel="nofollow" title='{{product_in_quantity.product.preferred_source.name}}' target="_blank" description='' ng-show='product_in_quantity.product.preferred_source')
