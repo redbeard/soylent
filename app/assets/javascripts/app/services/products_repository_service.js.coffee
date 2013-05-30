@@ -331,6 +331,16 @@ class window.ProductsRepositoryService
         @elements.Inositol.in_quantity("250mg"),
       ]
 
+    @products.push new Product @elements, "Doctor's Best Lithium Orotate 125mg (200 tablets)",
+      [
+        new ProductSource("eBay.com.au", "http://www.ebay.com.au/itm/Doctors-Best-Lithium-Orotate-x200tabs-DEPRESSION-/300572588429#shId", new Qty("200 count"), new Qty(".12225 AUD/each")),
+        new ProductSource("iHerb.com", "http://www.iherb.com/Doctor-s-Best-Best-Lithium-Orotate-200-Tablets/22628?f=JNB001", new Qty("200 count"), new Qty(".06495 USD/each")),
+        new ProductSource("Amazon.com", "http://www.amazon.com/gp/product/B003B6X66U?tag=soylent-mk-20", new Qty("200 count"), new Qty(".05795 USD/each")),
+      ],
+      new Qty("1 count"), [
+        @elements.Lithium.in_quantity("5mg"),
+      ]
+
     @products.push new Product @elements, "Copper Gluconate Anhydrous 1%",
       [
         new ProductSource("PureBulk.com (1kg package)", "http://purebulk.com/copper-gluconate-anhydrous-1.html", new Qty("1kg"), new Qty("32.50 USD/kg")),
