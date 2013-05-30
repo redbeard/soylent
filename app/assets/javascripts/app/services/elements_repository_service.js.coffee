@@ -44,7 +44,7 @@ class window.ElementsRepositoryService
     @all.push new Element("Pantothenic acid", "mg", "minor") 
     @all.push new Element("Choline", "g", "minor") 
     @all.push new Element("Sulfur", "g", "minor") 
-    @all.push new Element("Lithium", "g", "minor") 
+    @all.push new Element("Lithium", "microgram", "minor") 
     @all.push new Element("Creatine", "g", "minor") 
     @all.push new Element("Lycopene", "microgram", "minor") 
     @all.push new Element("Omega-3 Fatty Acids", "mg", "minor") 

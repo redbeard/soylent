@@ -40,7 +40,7 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
     $elements["Pantothenic acid"].in_quantity("10 mg"), 
     $elements.Choline.in_quantity("550mg"), 
     $elements.Sulfur.in_quantity("2g"),
-    $elements.Lithium.in_quantity("0g"),
+    $elements.Lithium.in_quantity("1000 microgram"), # Based on http://www.jacn.org/content/21/1/14.full
     $elements.Creatine.in_quantity("5g"),
     $elements.Lycopene.in_quantity("500 microgram"),
     $elements["Omega-3 Fatty Acids"].in_quantity("750 mg"),
