@@ -152,6 +152,16 @@ class window.ProductsRepositoryService
         @elements.Fats.in_quantity("1.0g"),
         @elements["Fats (saturated)"].in_quantity("0.7g"),
         @elements.Sodium.in_quantity("185.0mg"),
+
+        # Following based on this: http://www.bulknutrients.com.au/assets/pdf/Bulk_Nutrients_WPI_2012_Test_Results.pdf
+        @elements.Cholesterol.in_quantity("8.1mg"),
+        @elements.Calcium.in_quantity("480mg"),
+        @elements.Copper.in_quantity("0.0640mg"),
+        @elements.Iron.in_quantity("0.59mg"),
+        @elements.Manganese.in_quantity("0.478mg"),
+        @elements.Zinc.in_quantity("0.213mg"),
+        @elements.Selenium.in_quantity("67.8 microgram"),
+
         new Ingredient "Amino Acid Profile", new Qty("30g"), [
           @elements.Isoleucine.in_quantity("1524 mg"),
           @elements.Leucine.in_quantity("3459 mg"),
