@@ -80,12 +80,13 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
 
   $scope.recipe = new Recipe [ 
 #    $products_repository.findBySubstring("Butter")[0].in_quantity( new Qty("33g") ),
-    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("29ml") ),
+    $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("33ml") ),
 #    $products_repository.findBySubstring("Maltodextrin (Bulk")[0].in_quantity( new Qty("200g") ),
 #    $products_repository.findBySubstring("Oat Bran")[0].in_quantity( new Qty("45.0g") ), 
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("80.0g") ), 
-    $products_repository.findBySubstring("Maltodextrin (BulkNutrients.com.au)")[0].in_quantity( new Qty("10.0g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("285g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("60.0g") ), 
+    $products_repository.findBySubstring("Maltodextrin (BulkNutrients.com.au)")[0].in_quantity( new Qty("20.0g") ), 
+#    $products_repository.findBySubstring("Honey")[0].in_quantity( new Qty("10.0g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("287g") ),
     $products_repository.findBySubstring("Leucine")[0].in_quantity( new Qty("5g") ),
     $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("39 g") ),
 #    $products_repository.findBySubstring("Ascorbic Acid Powder")[0].in_quantity( new Qty("60mg") ),

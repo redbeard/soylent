@@ -138,6 +138,29 @@ class window.ProductsRepositoryService
         @elements.Serine.in_quantity("0.750 g"),
       ]
 
+    @products.push new Product @elements, "Honey (generic)",
+      [ new ProductSource("USDA National Nutrient Database", "http://ndb.nal.usda.gov/ndb/foods/show/6058", new Qty("1kg"), new Qty("20 AUD/kg")) ],
+      new Qty("100g"), [
+        @elements.Energy.in_quantity("304 kcal"),
+        @elements.Protein.in_quantity("0.3 g"),
+        @elements.Fats.in_quantity("0 g"),
+        @elements["Carbohydrates"].in_quantity("82.4 g"),
+        @elements["Fibre"].in_quantity("0.2 g"),
+        @elements["Carbohydrates (sugars)"].in_quantity("82.12 g"),
+        @elements["Calcium"].in_quantity("6 mg"),
+        @elements["Iron"].in_quantity("0.42 mg"),
+        @elements["Magnesium"].in_quantity("2 mg"),
+        @elements["Phosphorus"].in_quantity("4 mg"),
+        @elements["Potassium"].in_quantity("52 mg"),
+        @elements["Sodium"].in_quantity("4 mg"),
+        @elements["Zinc"].in_quantity("0.22 mg"),
+        @elements["Vitamin C"].in_quantity("0.5 mg"),
+        @elements["Riboflavin"].in_quantity("0.038 mg"),
+        @elements["Niacin"].in_quantity("0.121 mg"),
+        @elements["Vitamin B6"].in_quantity("0.024 mg"),
+        @elements["Folate"].in_quantity("2 microgram"),
+      ]
+
     @products.push new Product @elements, "Whey Protein Isolate - Natural", [
         new ProductSource("BulkNutrients.com.au (1kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("1kg"), new Qty("35 AUD/kg")),
         new ProductSource("BulkNutrients.com.au (2kg package)", "http://www.bulknutrients.com.au/buy/wpi-natural-1kg-10kg/WPI", new Qty("2kg"), new Qty("29.5 AUD/kg")),
