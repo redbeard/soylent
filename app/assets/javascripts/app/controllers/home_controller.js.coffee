@@ -93,7 +93,7 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
 
     $products_repository.findBySubstring("Opti Men")[0].in_quantity( new Qty("3 count") ),
     $products_repository.findBySubstring("Iron")[0].in_quantity( new Qty("0.5 count") ),
-    $products_repository.findBySubstring("Calcium/magnesium")[0].in_quantity( new Qty("0.25 count") ),
+    $products_repository.findBySubstring("Calcium/magnesium")[0].in_quantity( new Qty("0.5 count") ),
     $products_repository.findBySubstring("Inositol")[0].in_quantity( new Qty("2 count") ),
     $products_repository.findBySubstring("Healthy Essentials High Strength")[0].in_quantity( new Qty("1.5ml") ),
     $products_repository.findBySubstring("Lithium Orotate")[0].in_quantity( new Qty("0.25 count") ),
