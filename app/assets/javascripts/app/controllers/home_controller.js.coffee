@@ -82,9 +82,9 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
     $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("35ml") ),
     $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("35.0g") ), 
     $products_repository.findBySubstring("Maltodextrin (BulkNutrients.com.au)")[0].in_quantity( new Qty("35.0g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("287g") ),
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("290g") ),
     $products_repository.findBySubstring("Leucine")[0].in_quantity( new Qty("5g") ),
-    $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("38 g") ),
+    $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("40 g") ),
     $products_repository.findBySubstring("Salt Iodized (Generic)")[0].in_quantity( new Qty("0.5 g") ),
     $products_repository.findBySubstring("Potassium Chloride")[0].in_quantity( new Qty("7 g") ),
     $products_repository.findBySubstring("MSM")[0].in_quantity( new Qty("6g") ),
@@ -92,11 +92,11 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
     $products_repository.findBySubstring("Creatine")[0].in_quantity( new Qty("5g") ),
 
     $products_repository.findBySubstring("Opti Men")[0].in_quantity( new Qty("3 count") ),
-    $products_repository.findBySubstring("Iron")[0].in_quantity( new Qty("1 count") ),
+    $products_repository.findBySubstring("Iron")[0].in_quantity( new Qty("0.5 count") ),
     $products_repository.findBySubstring("Calcium/magnesium")[0].in_quantity( new Qty("0.25 count") ),
     $products_repository.findBySubstring("Inositol")[0].in_quantity( new Qty("2 count") ),
     $products_repository.findBySubstring("Healthy Essentials High Strength")[0].in_quantity( new Qty("1.5ml") ),
-    $products_repository.findBySubstring("Lithium Orotate")[0].in_quantity( new Qty("0.5 count") ),
+    $products_repository.findBySubstring("Lithium Orotate")[0].in_quantity( new Qty("0.25 count") ),
   ]
 
   # Limit sources:
