@@ -20,7 +20,7 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
     $elements.Iodine.in_quantity("150 microgram"), 
     $elements.Magnesium.in_quantity("400mg"), 
     $elements.Zinc.in_quantity("15mg"), 
-    $elements.Selenium.in_quantity("7 microgram"), 
+    $elements.Selenium.in_quantity("70 microgram"), 
     $elements.Copper.in_quantity("2 mg"), 
     $elements.Manganese.in_quantity("2 mg"), 
     $elements.Chromium.in_quantity("12 microgram"), 
