@@ -1,8 +1,7 @@
-ruby '1.9.3'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '~> 4.0.0'
 
 #gem 'newrelic_rpm'
 
@@ -19,8 +18,8 @@ gem 'angularjs-rails'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
-gem 'sass-rails',   '~> 4.0.0.beta1'
-gem 'coffee-rails', '~> 4.0.0.beta1'
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'jquery-rails'
 

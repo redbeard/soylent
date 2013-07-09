@@ -80,11 +80,11 @@ window.HomeCtrl = [ '$scope', '$http', '$timeout', '$products_repository', '$ele
 
   $scope.recipe = new Recipe [ 
     $products_repository.findBySubstring("Bertolli")[0].in_quantity( new Qty("35ml") ),
-    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("35.0g") ), 
-    $products_repository.findBySubstring("Maltodextrin (BulkNutrients.com.au)")[0].in_quantity( new Qty("35.0g") ), 
-    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("290g") ),
+    $products_repository.findBySubstring("Fine Powdered Oats")[0].in_quantity( new Qty("40.0g") ), 
+    $products_repository.findBySubstring("Maltodextrin (BulkNutrients.com.au)")[0].in_quantity( new Qty("40.0g") ), 
+    $products_repository.findBySubstring("Whey Protein Isolate")[0].in_quantity( new Qty("285g") ),
     $products_repository.findBySubstring("Leucine")[0].in_quantity( new Qty("5g") ),
-    $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("40 g") ),
+    $products_repository.findBySubstring("Fibre Cleanse")[0].in_quantity( new Qty("60 g") ),
     $products_repository.findBySubstring("Salt Iodized (Generic)")[0].in_quantity( new Qty("0.5 g") ),
     $products_repository.findBySubstring("Potassium Chloride")[0].in_quantity( new Qty("7 g") ),
     $products_repository.findBySubstring("MSM")[0].in_quantity( new Qty("6g") ),
