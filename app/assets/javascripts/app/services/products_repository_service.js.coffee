@@ -467,11 +467,16 @@ class window.ProductsRepositoryService
       [
         new ProductSource("Aussie Health Products (285g package)", "http://www.aussiehealthproducts.com.au/digestion-gut-health.php?id=411650&Natures-First-Fibre-Cleanse-Shaker-285g", new Qty("285g"), new Qty("28.245614035 AUD/kg")),
         new ProductSource("Aussie Health Products (400g package)", "http://www.aussiehealthproducts.com.au/cereals.php?id=7003243&Natures-First-Fibre-Cleanse-400g", new Qty("400g"), new Qty("23 AUD/kg")),
-      ],
-      new Qty("10g"), [
-        @elements.Energy.in_quantity("20 kcal"),
-        @elements.Carbohydrates.in_quantity("9g"),
-        @elements.Fibre.in_quantity("9g"),
+      ], # Source: http://shop.coles.com.au/online/national/natures-first-booster-fibre-cleanse
+      new Qty("20g"), [ 
+        @elements.Energy.in_quantity("46.6 kcal"),
+        @elements.Protein.in_quantity("1.7g"),
+        @elements.Fats.in_quantity("1.7g"),
+        @elements["Fats (saturated)"].in_quantity("0.2g"),
+        @elements.Carbohydrates.in_quantity("7.9g"),
+        @elements["Carbohydrates (sugars)"].in_quantity("2.6g"),
+        @elements.Sodium.in_quantity("8mg"),
+        @elements.Fibre.in_quantity("8.5g"),
       ]
 
     @products.push new Product @elements, "Fish Oil (Omega 3) EPA/DHA",

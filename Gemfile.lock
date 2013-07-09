@@ -127,7 +127,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   pg
-  rails (= 4.0.0)
+  rails (~> 4.0.0)
   sass-rails (~> 4.0.0)
   sqlite3
   turbolinks
